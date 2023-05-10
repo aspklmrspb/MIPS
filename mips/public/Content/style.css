@@ -1,0 +1,2287 @@
+﻿@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i';
+
+html, body, div, ul, ol, li, dl, dt, dd, h1, h2, h3, h4, h5, h6, pre, form, p, blockquote, fieldset, input {
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th, ul, ol, li, select, body, label {
+    font-size: 14px;
+    font-family: 'Source Sans Pro', sans-serif !important;
+    color: #666;
+}
+button {
+   font-family: 'Source Sans Pro', sans-serif !important; 
+}
+
+/*Go to Top */
+#back-top span {
+    background: url("../Content/images/spriteSmallImages.png") no-repeat scroll -106px -32px #EEA1AB;
+    border-radius: 15px 15px 15px 15px;
+    display: block;
+    height: 50px;
+    margin-bottom: 7px;
+    transition: all 1s ease 0s;
+    width: 50px;
+}
+/*Go to Top */
+
+
+.hmecontent strong {
+    font-weight: 600;
+}
+
+.hmecontent h2 {
+    font-size: 18px;
+}
+
+.hmecontent p {
+    font-size: 14px;
+}
+
+.hmecontent ul p.hPara {
+    color: #333;
+    padding: 10px 0 0 0;
+    /*font-weight:600;*/
+}
+
+.hmecontent ul li:last-child {
+    padding-bottom: 0 !important;
+}
+
+.cmsRprtTop ul li {
+    padding-bottom: 15px !important;
+}
+
+.contentcontnrPadng p span {
+    color: #00446B;
+    font-weight: bold;
+}
+
+.Grid-Pager-Td span, .Grid-info-Label {
+    /*color: #fff;*/
+    font-weight: normal;
+    font-size: 12px;
+}
+
+    .Grid-Pager-Td span input {
+        color: #666;
+        float: left;
+        /*line-height: 11px !important;
+        padding: 5px 0 !important;
+        margin: 0 0 0 5px;*/
+    }
+
+.Grid_Pager, .Grid_Noofrows {
+    box-shadow: none !important;
+    background: #fff !important;
+    font-size: 12px !important;
+}
+
+ul, ol, li {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+fieldset, img {
+    border: none;
+}
+
+caption, th {
+    text-align: left;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    color: #666666;
+}
+
+.cl {
+    clear: both;
+}
+
+.floatcss {
+    float: left;
+}
+
+a {
+    text-decoration: none;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.pad-less {
+    padding:0;
+}
+.navbar {
+    margin:0;
+    border:none;
+    min-height:0;
+}
+.navbar-brand {
+    height:auto;
+}
+header {
+    background:url("images/header-bg.png")center -70px no-repeat #f1ede5;
+    background-size:100%;
+}
+legend {
+    text-align:center;
+    font-weight:600;
+}
+.validation-summary-errors {
+    font-weight:600;
+    margin:10px 0 0;
+}
+.logo-left {
+    float: left;
+}
+
+    .logo-left img {
+        margin: 15px 0 15px 20px;
+    }
+
+.mainHead {
+    width: 68%;
+    float: right;
+}
+
+    .mainHead h1 {
+        text-align: center;
+        font-size: 40px;
+        color: #444;
+        font-weight: 600;
+        padding: 23px 0 0 0;
+    }
+
+    .mainHead img {
+        margin: 33px 72px 0 0;
+        float: right;
+    }
+
+.logo-right {
+    width: 17%;
+    float: right;
+}
+
+    .logo-right img {
+        margin: 15px 20px 15px 0;
+        float: right;
+    }
+
+.containerWrapper {
+    width: 100%;
+    float: left;
+}
+
+.navBlock {
+    background: url(images/nav-bg.png) 50% 50% repeat-x;
+}
+.loginForm {
+    margin:10% auto;
+    float:none;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    padding: 15px;
+}
+.pageTxt {
+    padding:20px 0;
+}
+
+    .mainNav li {
+        float: left;
+        text-shadow: 1px 1px 0 #000;
+        -webkit-text-shadow: 1px 1px 0 #000;
+        -moz-text-shadow: 1px 1px 0 #000;
+        -ms-text-shadow: 1px 1px 0 #000;
+        -o-text-shadow: 1px 1px 0 #000;
+    }
+
+        .mainNav li a {
+            color: #fff !important;
+            font-size: 14px;
+            font-weight: 600;
+            display: block;
+            padding: 5px 15px;
+            background-image: url(images/nav-sep.jpg);
+            background-position: right top;
+            background-repeat: no-repeat;
+        }
+
+        .mainNav li:hover {
+            background: url(images/nav-hover.png) 50% 50% repeat-x !important;
+        }
+
+        .mainNav li.active, .mainNav li.active:hover {
+            background: url(images/nav-active.png) 50% 50% repeat-x !important;
+        }
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:focus, .navbar-default .navbar-nav > .active > a:hover {
+    background:none !important;
+}
+        .mainNav li a:hover {
+            text-decoration: none;
+        }
+.navRight {
+    float:right !important;
+}
+    .navRight a {
+        background-position: left top !important;
+    }
+.loginBlock {
+    width: 15%;
+    float: right;
+}
+
+    .loginBlock p {
+        text-align: right;
+    }
+
+        .loginBlock p a {
+            color: #d1dfe5;
+            font-size: 13px;
+            display: block;
+            padding: 5px 0;
+            border-radius: 0 0 5px 0;
+            background: url(images/nav-hover.png) 50% 50% repeat-x;
+        }
+
+        .loginBlock p span {
+            font-size: 15px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+.arw {
+    width: 15px;
+    height: 15px;
+    display: block;
+    background-image: url(images/up-down-arrows.png);
+    background-repeat: no-repeat;
+    float: right;
+    background-position: 4px 3px;
+    background-color: #3c4d55;
+    margin: 3px 10px 3px 5px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+.loginBlock a:hover {
+    text-decoration: none;
+}
+
+.loginBlock a.active .arw {
+    background-position: -11px 3px;
+}
+
+.acbody {
+    position: relative;
+    clear: both;
+    height: 100%;
+    width: 100%;
+}
+
+.contentContr {
+    background-color: #fff;
+    border-radius: 5px;
+    float: right;
+    margin-bottom: 10px;
+    overflow: auto;
+    width: 100%;
+}
+
+    .contentContr h3 {
+        font-size: 18px;
+        padding-bottom: 15px;
+        color: #00446b;
+    }
+
+    .contentContr p {
+        padding-bottom: 10px;
+    }
+
+    .contentContr h5 {
+        font-size: 16px;
+        padding-bottom: 10px;
+        color: #333;
+    }
+
+    .contentContr h6 {
+        margin-bottom: 10px;
+    }
+
+        .contentContr h6 span {
+            float: left;
+            margin: 0 0 5px 0;
+        }
+
+.inListu li {
+    list-style: none !important;
+}
+
+.inList {
+    padding: 0 0 0 20px;
+}
+
+    .inList li {
+        padding: 0 0 10px 0;
+        font-size: 14px;
+        font-weight: 600;
+        list-style: decimal;
+        color: #4d4d4d;
+    }
+
+    .inList ul {
+        margin-left: 13px;
+    }
+
+        .inList ul li {
+            font-size: 13px;
+            font-weight: normal;
+            list-style: lower-alpha !important;
+            color: #666;
+        }
+
+        .inList ul ul li {
+            list-style: disc;
+        }
+
+    .inList li > ul {
+        padding: 5px 0 0 0;
+    }
+
+    .inList .myCheckbox {
+        margin-bottom: 10px !important;
+        margin-left: 0 !important;
+    }
+
+.inList2 {
+    padding: 0 !important;
+}
+
+    .inList2 ul {
+        margin-left: 37px;
+        margin-top: 5px;
+    }
+
+    .inList2 li {
+        padding-bottom: 10px;
+        padding-left: 20px;
+    }
+
+.regisOuter {
+    width: auto;
+}
+
+.regisDiv {
+    padding: 2%;
+    border: 1px solid #e2e2e2;
+    border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    -webkit-border-radius: 10px;
+}
+
+.regisfrmTab tr td {
+    padding: 5px;
+}
+
+    .regisfrmTab tr td label {
+        font-weight: 600;
+        color: #333;
+    }
+
+.form_register h2 {
+    font-size: 22px;
+}
+
+.tbl {
+    width: 100%;
+}
+
+    .tbl tr td {
+        padding: 2px 5px 5px 5px !important;
+        vertical-align: top;
+    }
+
+        .tbl tr td:first-child, .tbl tr td:nth-child(2) {
+            width: 42%;
+        }
+
+        .tbl tr td:last-child {
+            width: 12%;
+            vertical-align: top;
+        }
+
+.clsRemove {
+    margin: 16px 0 0 0;
+}
+
+.TBG {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    padding: 5px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    background: #fbfafa;
+}
+
+.regisfrmTab tr:nth-child(odd) td {
+    background: #e2e9ed;
+}
+
+.regisfrmTab tr:last-child td {
+    background: none;
+}
+
+.regisfrmTab tr td {
+    padding: 5px;
+}
+/*.addLine td{ padding:0 !important;}*/
+.addButton {
+    margin-right: 5px;
+}
+
+.btnsDiv {
+    padding: 10px 0 0; /*width:22%; margin:0 auto;*/
+    height: 35px;
+}
+
+.bBtn {
+    vertical-align: bottom;
+    /*background: url("../content/images/btnBg.png")left top repeat-x;
+    border-bottom: 3px solid #333;*/
+    background: #758c95; /* Old browsers */
+    background: -moz-linear-gradient(top, #758c95 0%, #5a6b74 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#758c95), color-stop(100%,#5a6b74)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #758c95 0%,#5a6b74 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #758c95 0%,#5a6b74 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #758c95 0%,#5a6b74 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #758c95 0%,#5a6b74 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#758c95', endColorstr='#5a6b74',GradientType=0 ); /* IE6-9 */
+    -webkit-box-shadow: 0 4px #333;
+    -moz-box-shadow: 0 4px #333;
+    box-shadow: 0 4px #333;
+    behavior: url("../content/images/PIE.htc");
+    padding: 3px 9px !important;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    border-radius: 5px;
+    color: #fff;
+    font-weight: normal;
+    font-size: 14px;
+    display: block;
+    /*height: 31px;*/
+    margin: 0;
+    border:none;
+}
+
+    .bBtn:hover {
+        text-decoration: none;
+        /*background: url("../content/images/btnBg.png")left -22px repeat-x; 
+    border-bottom: 3px solid #333;*/
+        background: #95a9b1; /* Old browsers */
+        background: -moz-linear-gradient(top, #95a9b1 0%, #637882 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#95a9b1), color-stop(100%,#637882)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #95a9b1 0%,#637882 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #95a9b1 0%,#637882 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #95a9b1 0%,#637882 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #95a9b1 0%,#637882 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95a9b1', endColorstr='#637882',GradientType=0 ); /* IE6-9 */
+        cursor: pointer;
+        -webkit-box-shadow: 0 4px #333;
+        -moz-box-shadow: 0 4px #333;
+        box-shadow: 0 4px #333;
+        padding: 5px 15px;
+    }
+
+    .bBtn:active {
+        margin-top: 2px;
+        /*border-bottom:0; 
+    background: url("../content/images/btnBg.png")left -28px repeat-x;*/
+        background: #95a9b1; /* Old browsers */
+        background: -moz-linear-gradient(top, #95a9b1 0%, #637882 100%); /* FF3.6+ */
+        background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#95a9b1), color-stop(100%,#637882)); /* Chrome,Safari4+ */
+        background: -webkit-linear-gradient(top, #95a9b1 0%,#637882 100%); /* Chrome10+,Safari5.1+ */
+        background: -o-linear-gradient(top, #95a9b1 0%,#637882 100%); /* Opera 11.10+ */
+        background: -ms-linear-gradient(top, #95a9b1 0%,#637882 100%); /* IE10+ */
+        background: linear-gradient(to bottom, #95a9b1 0%,#637882 100%); /* W3C */
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#95a9b1', endColorstr='#637882',GradientType=0 ); /* IE6-9 */
+        -webkit-box-shadow: 0 2px #333;
+        -moz-box-shadow: 0 2px #333;
+        box-shadow: 0 2px #333;
+        padding: 5px 15px;
+        outline: none !important;
+    }
+
+    .bBtn:visited {
+        border: none !important;
+        outline: none !important;
+    }
+
+.bBtn2 {
+    background: url("../content/images/btnBg2.png")left top repeat-x !important;
+    border-bottom-color: #355d26 !important;
+}
+
+    .bBtn2:hover {
+        background: url("../content/images/btnBg2.png")left -28px repeat-x !important;
+    }
+
+.downloadExcl {
+    background: url("../content/images/download-icon.png")left center no-repeat;
+    padding-left: 20px;
+}
+
+.exp {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.contentcontnrPadng {
+    min-height: 600px;
+    overflow: auto;
+    padding: 10px;
+}
+
+.footerContr {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
+    border-color: #cfcfcf;
+    border-image: none;
+    border-style: solid;
+    border-width: 1px 0 0;
+    bottom: 0;
+    color: #555;
+    font-size: 12px;
+    font-weight: normal !important;
+    height: 25px;
+    line-height: 25px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.footerLst {
+    padding: 0 10px;
+}
+
+    .footerLst li:first-child {
+        text-align: left;
+    }
+
+    .footerLst li {
+        float: left;
+        width: 50%;
+    }
+
+.versiontxt {
+    float: right;
+}
+
+.lgnbxDiv {
+    top: -13px;
+    right: 12px;
+    position: absolute;
+    height: 13px;
+}
+
+.lgnfrmDiv {
+    padding: 6px;
+}
+
+    .lgnfrmDiv span {
+        display: block;
+        color: #d1dfe5;
+        font-size: 13px;
+        word-wrap: break-word;
+    }
+
+        .lgnfrmDiv span:first-child {
+            font-weight: 600;
+            color: #fff;
+            font-size: 1.063em;
+        }
+
+.signoubtnCtr a:last-child {
+    margin-right: 5px;
+}
+
+.signoubtndrp {
+    /*background: #023769 url(images/log_btn_up.jpg) repeat-x 0 0;*/
+    color: #fff;
+    text-align: center;
+    /*border: 1px solid #2365A1;*/
+    padding: 3px 8px;
+    cursor: default;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    font-weight: normal;
+    outline: none;
+    margin-left: 5px;
+    font-size: 0.938em !important;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+    .signoubtndrp:hover {
+        color: #fff;
+        outline: none;
+        text-decoration: none;
+    }
+
+    .signoubtndrp:active {
+        background-color: #1A2025;
+        background-image: none;
+        outline: none;
+    }
+
+.signoubtnCtr {
+    padding-top: 8px;
+    padding-bottom: 9px;
+    text-align: center;
+    width: 100%;
+    color: #fff;
+    background-color: #4c5b63;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.ui-spinner-input {
+    padding: 0px !important;
+    font-size: 11px !important;
+    line-height: 19px !important;
+    height: 12px;
+}
+
+.Grid-Pager-Td label {
+    color: #333;
+}
+
+.hPara {
+    font-size: 16px;
+    padding: 0;
+    margin: 0 0 0 0;
+}
+
+
+@media screen and (max-width:479px) {
+
+    .logo-left {
+        width: 100%;
+        float: none;
+    }
+
+        .logo-left a {
+            width: 100%;
+            display: block;
+            text-align: center;
+        }
+
+        .logo-left img {
+            margin: 10px auto;
+        }
+
+    .mainHead {
+        width: 100%;
+    }
+
+        .mainHead h1 {
+            padding: 0 0 10px 0;
+            font-size: 135%;
+        }
+
+    .fbold {
+        padding-bottom: 10px;
+    }
+
+        .fbold label {
+            font-size: 150%;
+        }
+
+    .parentxt {
+        font-size: 100% !important;
+    }
+
+    .authrz {
+        margin: 4% 0;
+    }
+
+        .authrz .myCheckbox {
+            margin: 0 5px 20px !important;
+        }
+
+    .btnH {
+        margin: 0 !important;
+    }
+
+    .footerLst li {
+        font-size: 12px;
+    }
+
+        .footerLst li:first-child {
+            width: 70%;
+        }
+
+        .footerLst li:last-child {
+            width: 30%;
+        }
+
+    #treeMenu ul li {
+        overflow: scroll;
+    }
+
+    .navBlock {
+        display: none;
+    }
+}
+
+ul.suces {
+    width: 98%;
+    float: none;
+    padding-left: 2%;
+    list-style: none;
+}
+
+    ul.suces li {
+        width: 100%;
+        padding: 0 0 3px 0;
+        margin: 0;
+        float: left;
+    }
+
+        ul.suces li b {
+            font-weight: bold;
+        }
+
+.dateTab .ui-datepicker-trigger {
+    width: 20px;
+    margin-left: 3px;
+}
+
+.datepickercaln {
+    width: 120px;
+    margin-right: 10px;
+}
+
+.ui-datepicker-trigger {
+    float: right;
+    cursor: pointer;
+}
+
+.load_img {
+    width: 20%;
+    padding: 0% 40%;
+    margin: 0%;
+    height: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: #000;
+    opacity: 0.5;
+    z-index: 999999;
+}
+
+
+    .load_img img {
+        position: absolute;
+        left: 50%;
+        top: 45%;
+        float: left;
+        padding: 0%;
+        margin: 0;
+        border: none;
+    }
+
+#filetab .gridcontner table.Gridtable thead tr td:nth-child(1) {
+    width: 220px;
+}
+
+#filetab .gridcontner table.Gridtable thead tr td:nth-child(2), #filetab .gridcontner table.Gridtable thead tr td:nth-child(3) {
+    width: 115px;
+    text-align: center;
+}
+
+#filetab .gridcontner table.Gridtable thead tr td:nth-child(4) {
+    width: 90px;
+}
+
+#filetab .gridcontner table.Gridtable thead tr td:nth-child(5), #filetab .gridcontner table.Gridtable thead tr td:nth-child(6), #filetab .gridcontner table.Gridtable thead tr td:nth-child(7), #filetab .gridcontner table.Gridtable thead tr td:nth-child(8) {
+    width: 50px;
+}
+
+#filetab .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(2), #filetab .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(3), #filetab .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(4), #filetab .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(9) {
+    text-align: center;
+}
+
+
+
+
+.filegrid .gridcontner table.Gridtable thead tr td:nth-child(3) {
+    width: 90px;
+    text-align: center;
+}
+
+.filegrid .gridcontner table.Gridtable thead tr td:nth-child(1), .filegrid .gridcontner table.Gridtable thead tr td:nth-child(4), .filegrid .gridcontner table.Gridtable thead tr td:nth-child(9) {
+    text-align: center;
+}
+
+.filegrid .gridcontner table.Gridtable thead tr td:nth-child(5), .filegrid .gridcontner table.Gridtable thead tr td:nth-child(6), .filegrid .gridcontner table.Gridtable thead tr td:nth-child(7), .filegrid .gridcontner table.Gridtable thead tr td:nth-child(8) {
+    width: 65px;
+}
+
+.filegrid .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(5), .filegrid .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(6), .filegrid .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(7), .filegrid .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(8) {
+    text-align: center;
+}
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(1), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(2), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(3), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(4), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(5), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(6), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(7), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(8), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(9), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(10), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(11),#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(14) {
+    text-align: center;
+    word-break:break-all;
+    -o-word-break:break-all;
+    -moz-word-break:break-all;
+    -webkit-word-break:break-all;
+    -ms-word-break:break-all;
+}
+
+#div_AllUsers .gridcontner table.Gridtable tbody tr td:nth-child(12), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(13), 
+#div_AllUsers .gridcontner table.Gridtable tbody tr td:nth-child(14), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(15),
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(16) {
+    text-align: center;
+  
+}
+
+
+/*#div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(1), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(2), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(3), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(4), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(5), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(6), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(7), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(8), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(9), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(10), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(11), #div_AllUsers .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(13) {
+    text-align: center;
+}*/
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(1), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(2) {
+    /*width: 65px;*/
+    width: 72px;
+}
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(4)
+{
+    width: 95px;
+    white-space: nowrap;
+}
+
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(3), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(5), 
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(6) {
+    width: 50px;
+}
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(9), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(10) {
+    width: 75px;
+}
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(7), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(11),
+ #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(14), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(15),
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(8), #div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(16)
+{
+    width: 65px;
+}
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(12) {
+    width: 75px;
+    text-align: center;
+}
+
+#div_AllUsers .gridcontner table.Gridtable thead tr td:nth-child(13) {
+    width: 75px;
+}
+#div_AllUsers .gridcontner table.Gridtable thead tr td {
+    text-align: center;
+    word-break:break-all;
+    -o-word-break:break-all;
+    -mz-word-break:break-all;
+    -ms-word-break:break-all;
+    -webkit-word-break:break-all;
+}
+.cmsXMLGrid .gridcontner table.Gridtable thead tr td {
+    text-align: center;
+}
+
+.cmsXMLGrid .gridcontner table.Gridtable tbody.Grid_rows tr td {
+    text-align: center;
+}
+
+#cmsGrid .gridcontner table.Gridtable thead tr td {
+    text-align: center;
+}
+
+#cmsGrid .gridcontner table.Gridtable tbody.Grid_rows tr td {
+    text-align: center;
+}
+
+    #cmsGrid .gridcontner table.Gridtable tbody.Grid_rows tr td:nth-child(2) {
+        text-align: left;
+    }
+
+#cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(1), #cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(3) {
+    width: 75px;
+}
+
+#cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(5) {
+    width: 94px;
+}
+
+#cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(6), #cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(10), #cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(4) {
+    width: 80px;
+}
+
+#cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(7), #cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(8) {
+    width: 90px;
+}
+
+#cmsGrid .gridcontner table.Gridtable thead tr td:nth-child(9) {
+    width: 85px;
+}
+
+.uplod tr td:first-child a {
+    float: left;
+}
+
+.uplod tr td:last-child {
+}
+
+.uplodbtn tr td {
+    width: 100%;
+}
+
+.ui-timepicker-wrapper {
+    overflow-y: auto;
+    height: 150px;
+    width: 6.5em;
+    background: #fff;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    -moz-box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+    outline: none;
+    z-index: 10001;
+    margin: 0;
+}
+
+    .ui-timepicker-wrapper.ui-timepicker-with-duration {
+        width: 13em;
+    }
+
+        .ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-30,
+        .ui-timepicker-wrapper.ui-timepicker-with-duration.ui-timepicker-step-60 {
+            width: 11em;
+        }
+
+.ui-timepicker-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ui-timepicker-duration {
+    margin-left: 5px;
+    color: #888;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-duration {
+    color: #888;
+}
+
+.ui-timepicker-list li {
+    padding: 3px 0 3px 5px;
+    cursor: pointer;
+    white-space: nowrap;
+    color: #000;
+    list-style: none;
+    margin: 0;
+}
+
+.ui-timepicker-list:hover .ui-timepicker-selected {
+    background: #fff;
+    color: #000;
+}
+
+li.ui-timepicker-selected,
+.ui-timepicker-list li:hover,
+.ui-timepicker-list .ui-timepicker-selected:hover {
+    background: #1980EC;
+    color: #fff;
+}
+
+    li.ui-timepicker-selected .ui-timepicker-duration,
+    .ui-timepicker-list li:hover .ui-timepicker-duration {
+        color: #ccc;
+    }
+
+.ui-timepicker-list li.ui-timepicker-disabled,
+.ui-timepicker-list li.ui-timepicker-disabled:hover,
+.ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+    color: #888;
+    cursor: default;
+}
+
+    .ui-timepicker-list li.ui-timepicker-disabled:hover,
+    .ui-timepicker-list li.ui-timepicker-selected.ui-timepicker-disabled {
+        background: #f2f2f2;
+    }
+
+/*.ExcelUpload {
+    padding:5px;
+    border:3px solid #ccc;
+    margin-bottom:10px;
+}*/
+.downloadExcelSchema {
+    float: left;
+    width: 100%;
+}
+
+    .downloadExcelSchema a {
+        float: left;
+        padding: 8px 0 8px 30px;
+        background: url(../Content/images/xcel.png)left center no-repeat;
+    }
+
+    .downloadTextSchema {
+    float: left;
+    width: 100%;
+}
+
+    .downloadTextSchema a {
+        float: left;
+        padding: 8px 0 8px 30px;
+        background: url(../Content/images/Notepad.png)left center no-repeat;
+    }
+
+#pdf_id {
+    float: left;
+    margin: 5px 0px;
+}
+
+    #pdf_id a {
+        padding: 8px 0 8px 30px;
+        background: url('../Content/images/pdf-img.png')left center no-repeat;
+        float: left;
+    }
+
+#SearchForm {
+    width: 100%;
+    float: left;
+}
+
+.hrCls {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0;
+    float: left;
+    height: 1px;
+    background: #ccc;
+}
+
+/*div#filetab div.gridcontner .Gridtable .Grid_rows tr:last-child td.Grid-RowAction-td div .menubar ul li:first-child ul {top:-40px !important;}*/
+div#filetab {
+    margin-bottom: 40px;
+    width: 100%;
+    float: left;
+}
+
+.disabled_btn {
+    opacity: 0.5 !important;
+    border-bottom: 0 !important;
+}
+
+    .disabled_btn:active {
+        opacity: 0.5 !important;
+        background-image: none !important;
+        background: rgba(120, 142, 151, 1)!important;
+    }
+
+/*Disable search functionality for child grid*/
+#tbl_importExams .ui-widget-header .Grid-Caption-right .Grid-Caption-Search ul.form-search {
+    display: none;
+}
+
+.transDiv {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    width: 300px;
+    padding: 10px;
+    position: relative;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+    .transDiv h2 {
+        position: absolute;
+        left: 10px;
+        top: -10px;
+        background: #fff;
+        padding: 0 5px;
+        color: #333;
+    }
+
+    .transDiv table tr td {
+        padding: 5px;
+    }
+
+        .transDiv table tr td:first-child {
+            text-align: right;
+            padding-right: 10px;
+        }
+
+    .transDiv input[type="text"] {
+        border: 1px solid #e2e2e2;
+        padding: 3px 5px;
+        font-size: 12px;
+        font-family: 'Source Sans Pro',sans-serif;
+        font-size: 13px;
+        color: #999;
+    }
+
+.hrClr {
+    background: #e2e2e2;
+    margin-bottom: 15px;
+}
+
+.uploadsearchTab tr td {
+    height: 35px;
+    padding-right: 10px;
+    vertical-align: middle;
+}
+
+.uploadsearchTab tr:last-child td:last-child {
+    vertical-align: top;
+    padding-top: 5px;
+}
+
+.regisfrmTab {
+    width: 100%;
+}
+
+.table-lnf1 tr td input[type="radio"] {
+    float: left;
+    margin: 3px 5px 0 0;
+}
+
+.table-lnf1 tr td .ynTabaln tbody tr td label {
+    margin: 0px 10px 0 0;
+    float: left;
+}
+
+.table-lnf1 tr td .ynTabaln tbody tr td {
+    padding: 0 !important;
+}
+
+.curNawd {
+    cursor: not-allowed;
+    user-select: none;
+    pointer-events: none !important;
+}
+
+.notCls {
+    width: 100%;
+    font-size: 14px;
+    color: #333;
+    line-height: 16px;
+    margin: 8px 0;
+    float: left;
+}
+
+.upldnotCls b {
+    width: 100%;
+    font-size: 14px;
+    color: #012B51;
+    line-height: 16px;
+    margin: 8px 0;
+}
+
+.notCls span {
+    color: #012B51;
+    font-weight: bold;
+}
+
+.sucesSts {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: left;
+    border: none;
+}
+
+    .sucesSts td {
+        padding: 0 0 3px 0;
+        margin: 0;
+        float: left;
+    }
+
+        .sucesSts th b, .sucesSts td b {
+            font-weight: bold;
+        }
+
+        .sucesSts td:first-child {
+            width: 15%;
+            color: #012B51;
+            font-weight: 600;
+        }
+
+        .sucesSts td:nth-child(2) {
+            width: 5%;
+        }
+
+        .sucesSts td:last-child {
+            width: 80%;
+        }
+
+table#tblExt td input {
+    float: left;
+    margin: 3px 5px 0 0;
+}
+
+table#tblExt td label {
+    text-align: left;
+    float: left;
+    margin: 0 10px 0 0;
+}
+
+.cmsRprt {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: left;
+    background: #fff;
+}
+
+    .cmsRprt .cmsRprtTop {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+
+.cmsRprtTop h3 {
+    width: 100%;
+    float: left;
+    font-size: 18px;
+    color: #00446b;
+    line-height: 22px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.cmsRprtTop b {
+    width: 100%;
+    float: left;
+    font-size: 16px;
+    color: #333;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+.cmsRprtTop ul {
+    margin-left: 25px !important;
+}
+
+.npiId {
+    float: left;
+    padding: 5px 10px;
+    margin: 15px 0;
+    background: #072c40;
+    color: #fff;
+    font-size: 16px;
+    line-height: 22px;
+    font-weight: 600;
+}
+
+    .npiId label {
+        font-size: 16px;
+        color: #fff;
+        line-height: 22px;
+        font-weight: 600;
+        padding-left: 5px;
+    }
+
+.mesrGrp {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 2px;
+    float: left;
+    background: #5D737D;
+    border: 1px solid #5D737D;
+    border-bottom: 0px;      
+    border-top-left-radius: 3px;
+    -moz-border-top-left-radius: 3px;
+    -webkit-border-top-left-radius: 3px;
+    -o-border-top-left-radius: 3px;
+    -ms-border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    -moz-border-top-right-radius: 3px;
+    -webkit-border-top-right-radius: 3px;
+    -o-border-top-right-radius: 3px;
+    -ms-border-top-right-radius: 3px;
+    background: rgb(93,115,125); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVkNzM3ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzQzNGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(93,115,125,1) 0%, rgba(51,67,74,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(93,115,125,1)), color-stop(100%,rgba(51,67,74,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d737d', endColorstr='#33434a',GradientType=0 ); /* IE6-8 */
+}
+
+    .mesrGrp h4 {
+        width: 100%;
+        float: left;
+        font-size: 14px;
+        color: #fff;
+        line-height: 20px;
+        font-weight: 600;
+        text-align: left;
+        background: rgb(93,115,125); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVkNzM3ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzQzNGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(93,115,125,1) 0%, rgba(51,67,74,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(93,115,125,1)), color-stop(100%,rgba(51,67,74,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(93,115,125,1) 0%,rgba(51,67,74,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5d737d', endColorstr='#33434a',GradientType=0 ); /* IE6-8 */
+
+    }
+
+    .mesrGrp div table {
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        float: left;
+    }
+
+        .mesrGrp:hover, .mesrGrp h4:hover {
+           background: rgb(93,115,125); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzVkNzM3ZCIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMzMzQzNGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(51,67,74,1) 0%, rgba(93,115,125,1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(51,67,74,1)),color-stop(0%,rgba(93,115,125,1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(51,67,74,1) 0%, rgba(93,115,125,1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(51,67,74,1) 0%, rgba(93,115,125,1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(51,67,74,1) 0%,rgba(93,115,125,1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(51,67,74,1) 0%, rgba(93,115,125,1) 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33434a', endColorstr='#5d737d',GradientType=0 ); /* IE6-8 */
+        }
+
+
+.npiIDtab {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    float: left;
+    border-bottom: 1px solid #5D737D;
+    background: #f1f1f1;
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: -moz-linear-gradient(top, #fefefe 0%, #f1f1f1 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fefefe), color-stop(100%, #f1f1f1)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, #fefefe 0%, #f1f1f1 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, #fefefe 0%, #f1f1f1 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, #fefefe 0%, #f1f1f1 100%); /* IE10+ */
+    background: linear-gradient(to bottom, #fefefe 0%, #f1f1f1 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fefefe', endColorstr='#f1f1f1',GradientType=0 ); /* IE6-8 */
+}
+
+
+    .npiIDtab td:first-child {
+        width: 15%;
+        padding: 5px 15px;
+    }
+
+    .npiIDtab td input[type=checkbox] {
+        float: left;
+        margin: 3px 5px 0 0;
+        cursor: pointer;
+    }
+
+    .npiIDtab td input[type=text] {
+        float: left;
+        margin-right: 10px;
+    }
+
+    .npiIDtab td {
+        padding: 0.5%;
+    }
+
+        /*.npiIDtab td:nth-child(2) {
+            width: 15%;
+        }*/
+
+        .npiIDtab td label {
+            float: left;
+            font-size: 15px;
+            color: #333;
+            line-height: normal;
+            font-weight: 600;
+            text-align: left;
+        }
+
+            .npiIDtab td label span {
+                font-size: 15px;
+                color: #222;
+                line-height: normal;
+                font-weight: 600;
+                text-align: left;
+            }
+
+        .npiIDtab td b {
+            font-size: 15px;
+            color: #5D737D;
+            line-height: normal;
+            font-weight: 600;
+            text-align: left;
+            padding: 0;
+        }
+
+    .npiIDtab div {
+        padding: 0 0 0 18px;
+    }
+
+    .npiIDtab tr:nth-child(3) td {
+        padding-top: 10px;
+    }
+
+.DenomProcs {
+    float: left;
+    margin: 3px 5px 0px 0px;
+}
+
+.DenomDiag {
+    float: left;
+    margin: 3px 5px 0px 0px;
+}
+
+table.table-lnf1 tr:nth-child(5) td input[type=radio] {
+    float: left;
+    margin: 0;
+}
+/*table.table-lnf1 tr:nth-child(5) td:nth-child(2) table tr td:first-child input[type=radio], table.table-lnf1 tr:nth-child(5) td:nth-child(2) table tr td:first-child {
+    padding-left:0px !important;
+}*/
+
+.genderLst tr td {
+    padding-left: 0 !important;
+}
+
+    .genderLst tr td input[type=radio] {
+        margin: 0;
+    }
+
+    .genderLst tr td label {
+        line-height: 10px;
+    }
+
+.searchCls {
+    font-size: 16px;
+    color: #012B51;
+    font-weight: bold;
+}
+
+.cnt {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000;
+    padding: 0 3px;
+}
+
+.cmsgridCls {
+    width: 100%;
+    padding: 0;
+    margin: 10px 0;
+    float: left;
+    border: 0px;
+}
+
+    .cmsgridCls tr td select#Selectedyear {
+        margin: 3px 0px 0px 15px;
+        height: 26px;
+    }
+
+    .cmsgridCls #CMSForm table td select#CMSYear {
+        margin: 3px 0px 0px 15px;
+        height: 26px;
+    }
+
+    .cmsgridCls tr td label {
+        font-weight: bold;
+    }
+
+    .cmsgridCls tr td span {
+        color: #012B51;
+        font-weight: 600;
+    }
+
+    .cmsgridCls tr td {
+        width: 33.33%;
+        vertical-align: middle;
+        /*padding-right: 8px;*/
+    }
+
+        .cmsgridCls tr td:first-child {
+            vertical-align: middle;
+            /*padding-right: 30px;*/
+        }
+
+        .cmsgridCls tr td:nth-child(2) table tr > td:first-child {
+            width: 50%;
+        }
+
+            .cmsgridCls tr td:nth-child(2) table tr > td:first-child label {
+                float: left;
+                padding-top: 6px;
+            }
+
+.padLeft {
+    padding-left: 35px;
+}
+
+#cmsGrid {
+    width: 100%;
+    float: left;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+.clsNoExams {
+    width: 98%;
+    padding: 1%;
+    float: left;
+    background: white !important;
+    border-bottom: 1px solid #5D737D;
+    height: auto;
+    font-size: 14px;
+}
+
+.cmsttlCls {
+    font-size: 18px;
+    line-height: 22px;
+    color: #00446b;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 10px;
+}
+
+.borRght {
+    width: 2px;
+    height: 12px;
+    margin: 4px 8px 0;
+    padding: 0;
+    float: left;
+    background: #666;
+}
+
+.subLinks {
+    text-decoration: underline;
+    font-size: 15px;
+    font-weight: 600;
+    float: left;
+    color: #333;
+    font-weight: bold;
+}
+
+.tinNumCls {
+    width: 100%;
+    float: left;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.tinNumClr {
+    color: #666;
+}
+
+.tinLblClr {
+    color: #012B51;
+    font-weight: bold;
+}
+
+.tinLblnote {
+    margin: 10px 0;
+}
+
+.pyslabel {
+    font-size: 16px;
+    line-height: 22px;
+    margin: 10px 0 15px 0px;
+    color: #012B51;
+    font-weight: bold;
+}
+
+.Gridtable {
+    width: 100%;
+    float: left;
+    margin-bottom: 10px;
+}
+
+.cmsgridCls table {
+    width: 100%;
+}
+
+.upldJsnLnk {
+    width: 100%;
+    float: left;
+    border-bottom: 1px solid #e2e2e2;
+    margin-bottom: 10px;
+}
+
+.parent {
+    display: block;
+    float: left;
+    margin: 0px 0 10px;
+}
+
+.genXMLDiv {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.genXMLTab tr td {
+    width: 32.33%;
+    padding-right: 1%;
+}
+
+    .genXMLTab tr td:nth-child(2) {
+        padding-left: 50px;
+    }
+
+    .genXMLTab tr td input[type="button"] {
+        float: left;
+        margin: 0 10px;
+    }
+
+    .genXMLTab tr td #Selectedyear {
+        float: left;
+        margin-right: 5px;
+    }
+
+    .genXMLTab tr td label {
+        float: left;
+        margin-top: 3px;
+        margin-right: 5px;
+        font-weight: 600;
+    }
+
+.genXMLTab tr:nth-child(2) td:last-child label {
+    width: 100%;
+    text-align: right !important;
+}
+
+.genXMLTab tr td label span {
+    color: #012B51;
+}
+
+.npiIDtab label.errmsg {
+    color: red;
+    font-weight: normal;
+}
+
+.genXMLTab {
+    width: 100%;
+    float: left;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.scrollToTop {
+        width: 80px;
+        height: 130px;
+        padding: 10px;
+        text-align: center;
+        background: whiteSmoke;
+        font-weight: bold;
+        color: #444;
+        text-decoration: none;
+        position: fixed;
+        top: 105px;
+        right: 10px;
+        display: none;
+        z-index: 99 !important;
+        background: url('../Content/images/scroll-top.png') no-repeat 0px 20px;
+    }
+
+    .scrollToTop:hover {
+        text-decoration: none;
+    }
+#Selectedyear {
+    /*float:right;
+    padding:0;*/
+    margin-left:15px;
+}
+
+
+.phygrid .gridcontner table.Gridtable thead tr td {
+    text-align: center;
+}
+.divExcel {
+    width:100%; float:left;
+}
+.ExcelUpload {
+    width:100%; float:left;
+}
+
+input.gridRowCheck, input.gridCheckAll {
+    margin-top: 6px;
+    width: 16px;
+    height: 15px;
+}
+
+input.gridRowCheck {
+    margin: 0 auto !important;
+    vertical-align: middle;
+    position: relative;
+    /*top: 30%;*/
+    padding: 0;
+}
+/*Grid Table*/
+.Gridtable {
+    width: 100%;
+    /*padding: 2px 4px 2px 4px;*/
+    /*border: 1px solid #02284C;*/
+    line-height: 1.3em;
+    border-radius: 5px;
+    display: table;
+}
+
+.Chaild-Grid-table {
+    /* margin: 10px !important;*/
+    /* width:80% !important;*/
+    margin: 0;
+}
+
+.tablescroll_head caption {
+    border: 1px solid #043057;
+    padding: 4px;
+    height: 20px;
+    font-weight: bold;
+    background-color: #02284C;
+    color: #fff;
+    line-height: 20px;
+    text-align: left;
+}
+
+div.Grid-Div-Export {
+    float: left;
+    position: relative;
+    width:9%;
+    /*right: 35px;
+    margin-top: 2px;*/
+}
+
+div.Grid-Caption-Refresh button.bt_grid_refresh {
+    float: left;
+    margin:0;
+    padding:7px 0;
+}
+
+div.Grid-Caption-right {
+    float: right;
+    width:273px;
+    margin:3px 5px 3px 0;
+}
+
+.Grid-Export-Excel {
+    width: 18px;
+    height: 16px;
+    background: transparent url(images/excel-icon-2.png) no-repeat 0 0;
+    display: block;
+}
+
+.Gridtable > tbody > tr, .Gridtable > thead > tr {
+}
+
+.Gridtable > tbody > tr > td {
+    padding: 5px 4px;
+    border-left: 1px #D2D2D2 solid;
+    border-bottom: 1px #D2D2D2 solid;
+    border-right: 1px #D2D2D2 solid;
+    font-size: 12px;
+    height:20px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.Gridtable > tbody > tr > td.Grid-NoRsults-Td {
+    font-style: italic;
+}
+
+.Gridtable > tfoot > tr {
+    border:1px solid #254557;
+    }
+
+.tablescroll_head thead td {
+    padding: 4px 7px;
+    height: 20px;
+    border-right: 1px solid #2884BF;
+    color: white;
+    font-weight: 600;
+    text-align: center;
+}
+
+.tablescroll_head thead td a {
+    color: #fff;
+    text-decoration: none;
+    line-height: 20px;
+    display: block;
+}
+
+.tablescroll_wrapper {
+    overflow-y: scroll !important;
+    width: 100% !important;
+}
+
+.Gridtable > tbody > tr {
+    font-size: 14px;
+    color: #2C2C2C;
+}
+
+span.Grid-Search-Heilight {
+    background-color: yellow !important;
+    padding: 0 4px;
+    border-radius: 1px;
+}
+
+.Gridtable > tbody > tr.SubGrid {
+    padding: 2px;
+}
+
+.Gridtable th:hover {
+}
+
+.Gridtable > tbody > tr {
+    background-color: #fff !important;
+}
+
+.Gridtable > tbody > tr:nth-child(odd) {
+    background-color: #F2F2F2 !important;
+}
+
+
+.Gridtable > tbody > tr:hover {
+    background-color: #E8EDF2 !important;
+}
+
+.Gridtable caption {
+    padding: 2px 2px 2px 0;
+}
+
+.Gridtable caption div.Grid-Caption-Refresh {
+    float: left;
+    margin:3px 0 3px 5px;
+}
+
+.Gridtable caption div.Grid-Caption-Search {
+    float: right;
+    width:91%;
+    margin:0;
+}
+
+.Gridtable caption button.btn_show_hide_grid {
+    float: right;
+    margin:0;
+    padding:7px 0;
+}
+
+.Gridtable caption button.btn-close-chaildGrid {
+    float: right;
+    margin:0;
+}
+
+.Gridtable > thead > tr > td {
+    border: 1px solid #666;
+    color: #FFFFFF;
+    height: 20px;
+    padding: 5px 4px;
+    background-color: #2f454e;
+}
+
+.Gridtable > thead > tr > td.Chaild-Grid-Opener-td {
+    width: 2%;
+}
+
+.Gridtable > thead > tr > td.Grid-RowAction-td {
+    width: 4%;
+    text-align: center;
+}
+
+.Gridtable > tbody > tr > td.Grid-RowAction-td {
+    width: 4%;
+    text-align: center;
+}
+
+.Grid-Tfoot-Subtable {
+    width:100%;
+}
+.Grid-Tfoot-Subtable tr td{ 
+    padding:3px 10px;
+}
+.Grid-Tfoot-Subtable tr td:first-child {
+    width:20%;
+}
+.Grid-Tfoot-Subtable tr td:nth-child(2) {
+    width:60%; text-align:center !important;
+}
+.Grid-Tfoot-Subtable tr td:last-child {
+    width:20%; text-align:right;
+}
+/*.Gridtable tfoot tr td {
+    padding: 0;
+}
+
+.Gridtable > tfoot > tr > td > table.Grid-Tfoot-Subtable {
+    width: 100%;
+}
+
+.Gridtable > tfoot > tr > td > table.Grid-Tfoot-Subtable > tbody > tr > td.Grid-T-ACButtonsTd {
+    width: 20%;
+    text-align: left;
+}
+
+.Gridtable > tfoot > tr > td > table.Grid-Tfoot-Subtable > tbody > tr > td.Grid-Pager-Td {
+    width: 60%;
+    text-align: center !important;
+}
+
+.Gridtable > tfoot > tr > td > table.Grid-Tfoot-Subtable > tbody > tr > td.Grid-info-Td {
+    width: 20%;
+}
+
+.Gridtable > tfoot > tr > td > table.Grid-Tfoot-Subtable > tbody > tr > td.Grid-info-Td > label.Grid-info-Label {
+    float: right;
+    font-weight: normal;
+    padding: 4px;
+}*/
+
+.Chaild-Grid-Opener-tr {
+}
+
+tr.Chaild-Grid-Opener-tr > td > span {
+    font-weight: bold;
+    background-color: inherit;
+    letter-spacing: 0.5px;
+}
+
+.tablescroll_foot tfoot tr {
+    background-color: #02284C;
+    color: white;
+}
+
+.tablescroll_foot tfoot tr td {
+    padding: 2px;
+    border: none;
+}
+
+.tablescroll_foot tfoot td form {
+    display: inline-block;
+}
+
+.Grid-Tittle {
+    padding-left: 5px;
+    font-size: 14px;
+    /*letter-spacing: 1px;color:#eaf5f7;*/
+    float: right;
+    
+    line-height:16px;
+}
+
+.Sortable {
+    display: block;
+}
+
+.Sortable:hover {
+    cursor: pointer;
+}
+
+.sort {
+    background: url(images/column-sortable.png) no-repeat right;
+    padding-right: 15px;
+}
+
+.sort-asc {
+    background: url(images/column-asc.png) no-repeat right;
+    padding-right: 15px;
+}
+
+.sort-dsc {
+    background: url(images/column-desc.png) no-repeat right;
+    padding-right: 15px;
+}
+
+/*search*/
+.form-search {
+    float: left;
+    margin:0;
+    padding:0;
+    position: relative;
+    /*right: 27px;*/
+}
+
+.form-search li {
+    float: left;
+    margin:0;
+    padding:0;
+}
+
+.form-search input {
+    background-color: #FFFFFF;
+    border:0;
+    border-right:1px solid #ccc;
+    /*border: 1px solid #fff;
+    border-right: none;
+    line-height: 15px;
+    vertical-align: top;*/
+    color: #333333;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 0 5px;
+    border-radius: 3px 0 0 3px;
+    -webkit-border-radius: 3px 0 0 3px;
+    -moz-border-radius: 3px 0 0 3px;
+    width: 193px;
+    margin:0;
+    height: 20px;
+}
+.form-search input[type="text"]:focus{
+    border:none;
+}
+
+.form-header-search-submit-btn {
+    background: url("images/search_icon.png") no-repeat scroll center center #FFFFFF;
+    cursor: pointer;
+    display: block;
+    height: 18px;
+    /*position: absolute;
+    right: -21px;
+    top: 2px;*/
+    width: 20px;
+    z-index: 9;
+    padding:1px;
+    /*border: 1px solid #fff;
+    border-left: 1px solid #ccc;
+    border-left: none;*/
+    text-indent: -9999px;
+    border-radius: 0 3px 3px 0;
+    -moz-border-radius: 0 3px 3px 0;
+    -webkit-border-radius: 0 3px 3px 0;
+}
+
+.form-header-search-submit-btn:hover {
+    background-color: #C5DFDF;
+}
+
+.form-header-search-submit-btn:active {
+    background-color: #A5DCE4;
+}
+
+/*search ends*/
+
+.splitdropmenu {
+    position: absolute;
+    z-index: 999999999999999999;
+}
+
+/*dropdown menu*/
+/*.menubar {
+    position: inherit !important;
+}*/
+
+.menubar ul ul {
+    display: none;
+}
+
+.menubar ul li:hover > ul {
+    display: block;
+}
+
+.menubar ul {
+    padding: 0px;
+    margin: 0;
+    list-style: none;
+    /*position: absolute;*/
+    display: inline-table;
+}
+
+.menubar ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+.menubar ul li {
+    float: none;
+}
+
+.menubar ul li:hover {
+    /*background: #D1D1D1;*/
+    background: #fff;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    /*border: 1px solid rgba(0,0,0,.2);*/
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    /*border-top:1px solid rgba(0,0,0,.2);
+    border-left:1px solid rgba(0,0,0,.2);
+    border-right:1px solid rgba(0,0,0,.2);*/
+}
+
+.menubar ul li:hover span {
+    color: #444;
+}
+
+.menubar ul li span {
+    padding: 0;
+    color: #fff;
+    text-decoration: none;
+}
+
+.menubar ul li span img {
+    margin-top: 2px;
+    height: 18px;
+}
+
+.menubar {
+    position: relative;
+}
+
+.menubar ul ul {
+    background: #fff;
+    border-radius: 0;
+    padding: 0;
+    /*position: absolute;*/
+    position: absolute !important; /*Changed for menu list icon of gridview - ashish*/
+    top: 3%;
+    min-width: 150px;
+    z-index: 99999999999999999999!important;
+    border: 1px solid #B5B5B5;
+    box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+    -moz-box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+    -webkit-box-shadow: 0 4px 23px 5px rgba(0, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.15);
+    padding: 2px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    right: 12px;
+}
+
+.menubar ul ul li {
+    float: none;
+    /*border-top: 1px solid #ebebeb;*/
+    font-size: 12px;
+}
+
+.menubar ul ul li span {
+    color: #333333;
+    padding: 2px 10px;
+    text-align: left;
+    display: block;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+
+.menubar ul ul li span:hover {
+    background: #072c40 url(images/ui-bg_highlight-soft_20_072C40_1x100.png) 50% 50% repeat-x;
+    color: #fff;
+    cursor: pointer;
+}
+
+.menubar ul ul ul {
+    position: absolute;
+    left: 100%;
+    top: 0;
+}
+
+.Chaild-Grid-Opener {
+    opacity: 0.5;
+    cursor: pointer;
+    background: url(images/list_metro.png) no-repeat 0 0;
+    width: 16px;
+    height: 16px;
+}
+
+.Chaild-Grid-div {
+    /*margin: 2px;*/
+}
+
+.Grid_Number_Spinner {
+    width: 37px;
+}
+
+.Grid_Number_Spinner:focus {
+    border: none !important;
+}
+
+/*dropdown menu ends*/
+.list-icon-bgcss {
+    background: url(images/list-icon.png) no-repeat 0 0;
+    width: 16px;
+    height: 14px;
+    margin-top: 0.1em;
+}
+
+.gridTable .Gridtable {
+    table-layout:fixed;
+}
+.gridTable .Gridtable tr td{
+    width:6.6% !important;    
+    -ms-word-break:break-word;
+    -webkit-word-break:break-word;
+    -o-word-break:break-word;
+    word-break:break-word;
+}
+.gridTable .Gridtable tr td:nth-last-child(2){
+    width:10% !important;
+    
+}
+#btnViewButton {
+    font-size:12px;
+    margin: 0 auto;
+    
+}
+tfoot tr.ui-dialog-titlebar > td {
+    border:1px solid #D2D2D2;
+}
+.navbar-brand>img {
+    width: 250px;
+}
+
+.strtdate {
+float:left;
+margin-right:15px;
+}
+#ddlColumnList_ms .ui-icon-triangle-1-s { background-position: -68px -10px }
+.ui-multiselect-filter {font-size:12px; margin-bottom:5px;}
+.ui-icon-check { background-position: -65px -142px;}
+.ui-icon-closethick {    background-position: -98px -125px;}
+.ui-multiselect-header {   margin-bottom: 2px;    padding: 3px 0 6px 4px;}
+.ui-multiselect-checkboxes label input{ margin-right:4px;}

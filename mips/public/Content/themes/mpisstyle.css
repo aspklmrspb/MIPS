@@ -1,0 +1,153 @@
+﻿body {
+    color: #5a5a5a;
+    background: #fff !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+.container {
+    padding-top:0px;
+}
+h4, h4:hover {
+    background:none;
+}
+    h4 a {
+    display:initial;
+    padding:0px;
+    }
+.marginBot10 ul li {
+    list-style-type: disc;
+}
+ul, ol {
+    margin-left: 18px;
+    margin-bottom:0px !important;
+}
+.loginBlock p {
+    margin-bottom:0px !important;
+}
+.table th {
+    border:0px !important;
+}
+.panel-title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 16px;
+    color: inherit;
+}
+.btn {
+    display: inline-block;
+    width:auto !important;
+    border:1px solid transparent !important;
+ }
+.btn, .btn:hover {
+    padding:6px 7px !important;
+}
+    .btn:hover, .btn:focus {
+    background:none !important;
+    transition: none !important;
+    }
+.succesbutton-custom {
+    background-color: #006794 !important;
+    border-color: #1F425E !important;
+}
+.succesbutton-custom:hover, .succesbutton-custom:active, .succesbutton-custom:focus {
+    background-color: #1F425E !important;
+    border-color: #1F425E !important;
+}
+
+
+.btn-success.disabled.focus, .btn-success.disabled:focus, .btn-success.disabled:hover, .btn-success[disabled].focus, .btn-success[disabled]:focus, .btn-success[disabled]:hover, fieldset[disabled] .btn-success.focus, fieldset[disabled] .btn-success:focus, fieldset[disabled] .btn-success:hover {
+    background-color: #5cb85c !important;
+    border-color: #4cae4c !important;
+}
+.ac-container input:checked + label.mLabel, .ac-container input:checked + label.mLabel:hover {
+    background: #c6e1ec !important;
+    color: #3d7489 !important;
+    text-shadow: 0px 1px 1px rgba(255,255,255, 0.6) !important;
+    box-shadow: 0px 0px 0px 1px rgba(155,155,155,0.3), 0px 2px 2px rgba(0,0,0,0.1) !important;
+}
+.ac-container input:checked + label.mLabel:after {
+    background-image: url("../images/arrow_up.png") !important;
+}
+.ac-container label.mLabel:after, .ac-container input:checked + label.mLabel:after {
+    content: '' !important;
+    position: absolute !important;
+    width: 24px !important;
+    height: 24px !important;
+    left: 6px !important;
+    top: 3px !important;
+    background: transparent url("../images/arrow_down.png") no-repeat center center !important;
+}
+.slider {
+    position: absolute !important;
+    cursor: pointer !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 69px !important;
+    height: 33px !important;
+    background: url("../images/add.png") left top no-repeat !important;
+    -webkit-transition: .4s !important;
+    transition: .4s !important;
+}
+.contentContr p {
+    padding-bottom: 0px !important;
+}
+
+.TotalNumberFont {
+    text-align: center !important;
+    font-size: 75px !important;
+}
+
+html, li, p {
+    font-size: 14px;
+}
+.row-bgblue {
+    margin-top: 8px !important;
+    background-color:#1F425E;
+    color:#fff;
+    padding:10px;
+  
+}
+.row-bgblue h4 {
+    color:#fff;
+    font-size:20px;    
+    }
+.row-bgblue p{
+  line-height: 1.9;   
+}
+.margin-top {
+    margin-top: 20px;
+}
+.row-margin {
+    margin-left:0px;
+    margin-right:0px;
+}
+.btn-download-measures, .btn-selected, .btnSmall {
+    color: #3276b9 !important;
+    margin-left: auto !important;
+    padding: 11px 15px !important;
+    border-radius: 0 !important;
+    font-weight: 400 !important;
+    line-height: 1em !important;
+    border-color: #3276b9 !important;
+    font-size: 15px !important;
+    background-color: #fff !important;
+    transition:none !important;
+}
+.btn-download-measures:active, .btn-download-measures:focus, .btn-download-measures:hover, .btn-selected.is-selected, .btn-selected:active, .btn-selected:focus, .btn-selected:hover, .btnSmall.is-selected, .btnSmall:active, .btnSmall:focus, .btnSmall:hover, .is-selected.btn-download-measures {
+    background-color: #006794 !important;
+    border-color: #006794 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    transition:none !important;
+    padding: 11px 15px !important;
+}
+.view-summery-btn {
+   background-color: #006794 !important;
+   border-color: #1F425E !important;   
+}
+
+.view-summery-btn:hover, .view-summery-btn:focus  {
+   background-color: #002340 !important;
+   border-color: #1F425E !important;
+}
