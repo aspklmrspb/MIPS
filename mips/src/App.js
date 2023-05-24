@@ -1,22 +1,35 @@
-import ReactDOM from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Layout from "./pages/Layout";
-import Home from "./pages/Home";
-import Blogs from "./pages/Blogs";
-import Contact from "./pages/Contact";
-import NoPage from "./pages/NoPage";
+import React, { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 
-export default function App() {
+
+import PrivateRoute from './PrivateRoute';
+import LoginPage from './LoginPage';
+import MenuBar from './MenuBar';
+import HomePage from './HomePage';
+import Page1 from './Page1';
+import Page2 from './Page2';
+
+const App = () => {
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
   return (
-    <BrowserRouter>
+    <Router>
+      {isAuthenticated && <MenuBar />}
       <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="*" element={<NoPage />} />
-        </Route>
+        <Route
+          path="/login"
+          element={<LoginPage setIsAuthenticated={setIsAuthenticated} />}
+        />
+        <Route
+          path="/"
+          element={
+            <PrivateRoute isAuthenticated={isAuthenticated} element = {<HomePage />}>
+            </PrivateRoute>
+          }
+        />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
-}
+};
+
+export default App;
