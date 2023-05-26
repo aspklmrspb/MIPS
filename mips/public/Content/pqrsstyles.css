@@ -4,8 +4,8 @@
 }
 
 h1, h2, h3, h4, h5, h6, pre, code, address, caption, cite, code, em, strong, th, ul, ol, li, select, body, label {
-    font-size: 14px;
-    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 14px !important;
+    font-family: 'Source Sans Pro', sans-serif !important;
     /*color: #666;*/
 }
 select:focus-visible{
@@ -321,13 +321,9 @@ a {
 }
 
     .contentContr h3 {
-        font-size: 18px;
+        font-size: 18px !important;
         padding-bottom: 15px;
         color: #00446b;
-    }
-
-    .contentContr p {
-        padding-bottom: 10px;
     }
 
     .contentContr h5 {
@@ -337,7 +333,8 @@ a {
     }
 
     .contentContr h6 {
-        margin-bottom: 10px;
+        /* margin-bottom: 10px; */
+        font-size:20px !important;
     }
 
         .contentContr h6 span {
@@ -575,7 +572,7 @@ a {
 }
 
 .contentcontnrPadng {
-    min-height: 600px;
+    min-height: 600px ;
     overflow: auto;
     padding: 10px;
 }
@@ -701,6 +698,7 @@ a {
     font-size: 16px;
     padding: 0;
     margin: 0 0 0 0;
+    padding-bottom: 10px;
 }
 
 
@@ -2904,6 +2902,17 @@ div#_phyRegistStatusGrid .gridcontner .Gridtable .Grid_rows tr > td, div#_phyReg
     color: red;
     vertical-align:super;
 }
+ul.myul-style li {
+    list-style: disc !important;
+    line-height: 1.8 !important;
+}
+ul.myul-style li strong {
+    font-weight: bold;
+}
+div.myh3style h3 {
+    padding-bottom: 0px;
+    padding-top: 20px;
+}
 /*::-webkit-scrollbar {
     width: 10px;
     border-radius: 10px;
@@ -2923,3 +2932,6 @@ div#_phyRegistStatusGrid .gridcontner .Gridtable .Grid_rows tr > td, div#_phyReg
 /*::-webkit-scrollbar-thumb:hover {
     background: #555;
 }*/
+.css-o4b71y-MuiAccordionSummary-content.Mui-expanded,.css-o4b71y-MuiAccordionSummary-content{
+    margin : 5px 0px !important;
+}

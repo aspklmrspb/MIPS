@@ -3,14 +3,12 @@ import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-d
 
 
 import PrivateRoute from './PrivateRoute';
-import LoginPage from './LoginPage';
-import MenuBar from './MenuBar';
-import HomePage from './HomePage';
-import Page1 from './Page1';
-import Page2 from './Page2';
+import LoginPage from './Account/LoginPage';
+import MenuBar from './Routes/MenuBar';
+import HomePage from './Home/HomePage';
 
 const App = () => {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(true);
 
   return (
     <Router>
@@ -21,7 +19,7 @@ const App = () => {
           element={<LoginPage setIsAuthenticated={setIsAuthenticated} />}
         />
         <Route
-          path="/"
+          path="*"
           element={
             <PrivateRoute isAuthenticated={isAuthenticated} element = {<HomePage />}>
             </PrivateRoute>

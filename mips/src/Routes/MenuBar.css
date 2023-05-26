@@ -1,0 +1,21 @@
+.menu-bar {
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    background-color: #fff;
+  }
+  
+  .menu-bar .MuiTabs-root {
+  }
+  
+  .menu-bar .MuiTab-root {
+    font-weight: 600;
+  }
+  
+  .popover-container {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    font-weight: 600;
+  }
+  
