@@ -31,11 +31,11 @@ const MenuBar = () => {
           selected={isActiveTab('/')}
         />
         <Tab
-          label="About"
+          label="Recorde Entered"
           component={Link}
-          to="/about"
-          value="/about"
-          selected={isActiveTab('/about')}
+          to="/records-entered"
+          value="/records-entered"
+          selected={isActiveTab('/records-entered')}
         />
         <Tab
           label="Services"

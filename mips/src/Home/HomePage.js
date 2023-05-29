@@ -1,10 +1,28 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import InformationList from './InformationList';
 import SubmissionDashboard from './SubmissionDashboard';
-import AccordianExample from '../helpers/AccordianExample';
+import AccoridanHelper from '../helpers/AccoridanHelper';
 import Box from '@mui/material/Box';
+import {fetchUserTinData, fetchUserTINNpiData} from '../API/HomeAPI';
 
-const HomePage = ({isAuthenticated }) => {
+const HomePage = ({isAuthenticated, userName }) => {
+  const [tinData, setTinData] = useState([]);
+
+  async function fetchData() {
+    // You can await here
+    const response = await fetchUserTinData("administrator_100210");
+    setTinData(response);
+    // ...
+  }
+  async function expandCallbackFunction(tin, userName){
+    const response = await fetchUserTINNpiData(tin, "administrator_100210");
+    return response;
+  }
+
+  useEffect(() => {
+    fetchData();
+  }, [tinData]); 
+
   
   return (
     <div style={{marginTop: '5px'}} className='contentContr'>
@@ -26,8 +44,14 @@ const HomePage = ({isAuthenticated }) => {
             <a href="https://www.acr.org/-/media/ACR/Files/Registries/QCDR/2022-QCDR-Measures-Supported.pdf?la=en" rel="noopener noreferrer" target="_blank">2023 Non-MIPS QCDR Measures Supported</a>
         </div>
       </div>
-      </Box>
-      <AccordianExample />
+      </Box> 
+      <div style={{marginTop:'30px'}}>
+        {
+          tinData.map((row) => {
+            return <AccoridanHelper dataRow={row} key={`tin-${row.tin}-${row.IS_GPRO}`} expandFunction={expandCallbackFunction} />
+          })
+        }
+      </div>     
     </div>
   );
 };

@@ -6,6 +6,7 @@ import PrivateRoute from './PrivateRoute';
 import LoginPage from './Account/LoginPage';
 import MenuBar from './Routes/MenuBar';
 import HomePage from './Home/HomePage';
+import RecordsEntered from './Measure/RecordsEntered';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -17,6 +18,10 @@ const App = () => {
         <Route
           path="/login"
           element={<LoginPage setIsAuthenticated={setIsAuthenticated} />}
+        />
+        <Route
+          path="/records-entered"
+          element={<RecordsEntered />}
         />
         <Route
           path="*"

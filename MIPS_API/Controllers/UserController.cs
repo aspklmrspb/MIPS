@@ -11,12 +11,14 @@ namespace MIPS_API.Controllers
         private readonly IConfiguration configuration;
         private readonly ILogger<UserController> logger;
         private readonly SSOServiceSoap sSOServiceSoap;
+        private readonly string connectionString;
 
         public UserController(IConfiguration appConfiguration, ILogger<UserController> logger, SSOServiceSoap sSOServiceSoap)
         {
             this.configuration = appConfiguration;
             this.logger = logger;
             this.sSOServiceSoap = sSOServiceSoap;
+            this.connectionString = appConfiguration.GetConnectionString("ExamAPIConnection");
         }
         [HttpPost]
         [Route("Login")]
@@ -25,19 +27,6 @@ namespace MIPS_API.Controllers
             try
             {
                 var result = await sSOServiceSoap.SSOGetPortalUserByTokenAsync(loginuser.token);
-                var cookieOptions = new CookieOptions
-                {
-                    // Set the cookie properties
-                    Path = "/", // Cookie is accessible site-wide
-                    HttpOnly = true, // Cookie is accessible only through HTTP requests
-                    Secure = true, // Cookie is sent only over secure HTTPS connections
-                    SameSite = SameSiteMode.Strict, // Cookie is not sent on cross-site requests
-                    Expires = DateTime.UtcNow.AddDays(7) // Cookie expiration date
-                };
-
-                // Add the cookie to the response
-                Response.Cookies.Append("YourCookieName", "YourCookieValue", cookieOptions);
-
                 return Ok(result);
             }
             catch (Exception Ex)

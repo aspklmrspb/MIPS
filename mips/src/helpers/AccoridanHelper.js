@@ -5,12 +5,12 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import CustomTable from './CustomTable';
+import CustomAccordianTable from './CustomAccordianTable';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
 ))(({ theme }) => ({
-  border: `1px solid #5D737D`,
+  border: `0`,
   borderRadius : '3px',
   margin : '0px 10px 5px'
 }));
@@ -41,22 +41,33 @@ const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
   borderTop: '1px solid rgba(0, 0, 0, .125)',
 }));
 
-export default function CustomizedAccordions() {
+export default function AccoridanHelper(props) {
   const [expanded, setExpanded] = React.useState('');
-  const [data, setData] = React.useState(["Physician NPI","User Name","First Name","Last Name","Records","Registered"]);
+  const [columnData, setColumnData] = React.useState([]);
+  const [rowData, setRowData] = React.useState([]);
 
-  const handleChange = (panel) => (event, newExpanded) => {
-    setExpanded(newExpanded ? panel : false);
+  const handleChange = (tin) => async (event, newExpanded) => {
+    setExpanded(newExpanded ? tin : false);
+    setColumnData(["First Name", "Last Name","NPI"]);
+    const resultData = await props.expandFunction(tin);
+    setRowData(resultData);
+    if(resultData.length > 0){
+      setColumnData(Object.keys(resultData[0]));
+    }
   };
   return (
-    <div style={{margin:'30px 0 15px'}}>
-      <Accordion expanded={expanded === 'panel2'} onChange={handleChange('panel2')}>
+    <div style={{margin:'0px 0px 5px'}}>
+      <Accordion expanded={expanded === props.dataRow.tin} onChange={handleChange(props.dataRow.tin)} >
         <AccordionSummary aria-controls="panel1d-content" id="panel1d-header">
-          <Typography>Collapsible Group Item #1</Typography>
+          <Typography>{props.dataRow.tin}&nbsp;{props.dataRow.status}</Typography>
         </AccordionSummary>
         <AccordionDetails>
-          <Typography>
-          </Typography>
+          <div>
+            {
+              rowData.length != 0 &&
+              <CustomAccordianTable ColumnData={columnData} RowData={rowData} />
+            }
+          </div>
         </AccordionDetails>
       </Accordion>
     </div>

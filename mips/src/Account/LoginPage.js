@@ -21,7 +21,7 @@ const LoginPage = ({ setIsAuthenticated }) => {
       };
       await axios.post('https://localhost:7030/User/Login', loginuser)
       .then( (response) => {
-        debugger;
+
         console.log(response);
         navigate('/',{replace : true});
 
