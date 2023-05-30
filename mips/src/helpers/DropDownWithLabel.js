@@ -17,7 +17,7 @@ export default function DropDownWithLabel(props) {
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <Select
                 value={props.SelectedVal}
-                onChange={handleChange}
+                onChange={props.SubmitButtonCallBack}
                 displayEmpty
                 inputProps={{ 'aria-label': 'Without label' }}
             >
@@ -59,7 +59,9 @@ export default function DropDownWithLabel(props) {
                     boxShadow : '0 2px #333'
                     }
                 }
-                }>
+                }
+                onClick={props.SubmitButtonCallBack}
+                >
                     {props.SubmitText}
             </Button>
         }

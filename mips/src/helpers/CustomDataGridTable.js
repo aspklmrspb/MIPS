@@ -117,17 +117,7 @@ const rows = [
         test2:'dsd'
     }
   ];
-  const customToolbarCss =  {
-    backgroundColor: '#4a5b63',
-    color: '#fff'
-} 
-const columns = [
-    { field: 'tin', headerName: 'TIN' , flex: 1 ,align:'center', headerAlign: 'center', headerClassName:'table--header' },
-    { field: 'qmCMSScore', headerName: 'QM CMS Status',flex: 1 ,align:'center', headerAlign: 'center', headerClassName:'table--header' },
-    { field: 'qmScore', headerName: 'QM Score' ,flex: 1 ,align:'center', headerAlign: 'center', headerClassName:'table--header'  },
-    { field: 'iaCMSSCore', headerName: 'IA CMS Status',flex: 1 ,align:'center', headerAlign: 'center', headerClassName:'table--header'  },
-    { field: 'iaScore', headerName: 'IA Score',flex: 1 ,align:'center', headerAlign: 'center', headerClassName:'table--header'  },
-  ];
+
 
 
   function CustomToolbar() {
@@ -137,48 +127,40 @@ const columns = [
       </GridToolbarContainer>
     );
   }
-  export default function CustomDataGridTable() {
- 
-
-    const customHeaderCss =  {
-        backgroundColor: '#4a5b63',
-        color: '#fff'
-    }
+export default function CustomDataGridTable(props) {
+    const columns = props.ColumnData !== undefined ? props.ColumnData.map((obj) => {
+        return {
+              ...obj,
+            flex:1,
+            align:'center', 
+            headerAlign: 'center', 
+            headerClassName:'table--header'
+        };
+      }) : [];
+    const rows = props.RowData !== undefined ? props.RowData.map((obj, index) => {
+        return {
+            ...obj,
+            id: (index+1)
+        };
+      }) : [];
     return (
         <Box
-      sx={{
-        height: 400,
-        width: '100%',
-        '& .table--header': {
-          backgroundColor: '#072C40',
-          color:'#fff',
-        },
-      }}
-    >
-    <DataGrid 
-        components={{Toolbar: CustomToolbar,}}
-        rows={rows} 
-        columns={columns}
-    />
-    </Box>
-    //   <div style={{ height: 400, width: '100%' }}>
-    //     <DataGrid
-    //       rows={rows}
-    //       columns={columns}
-    //       components={{
-    //         Toolbar: CustomToolbar,
-    //       }}
-    //       componentsProps={{
-    //         toolbar: {
-    //           className: {customToolbarCss}, // Add a custom class name to the toolbar component
-    //         },
-    //       }}
-    //       classes={{
-    //         header: {customHeaderCss}, // Add a custom class name to the header component
-    //       }}
-    //       sx={{width:'100%', textAlign:'center'}}
-    //     />
-    //   </div>
+            sx={{
+                height: 400,
+                width: '100%',
+                '& .table--header': {
+                backgroundColor: '#072C40',
+                color:'#fff',
+                },
+            }}
+            >
+            <DataGrid 
+                sx={{width: '100%'}}
+                components={{Toolbar: CustomToolbar,}}
+                rows={rows} 
+                columns={columns}
+            />
+        </Box>
     );
-  }
+}
 

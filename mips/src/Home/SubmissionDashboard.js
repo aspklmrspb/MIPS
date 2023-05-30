@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -34,18 +34,51 @@ const SubmissionDashboard = () => {
     submittedGproTins : 0,
     submittedNonGproTins : 0,
     gproTinCount : 0,
-    nonGproTinCount : 0
+    nonGproTinCount : 0,
+    columnData:[],
   });
 
+  async function fetchData() {
+    const response = await fetchCMSSubmissionDashboardData(DashboardData.SelectedYear, "administrator_100210",DashboardData.IsGpro,"AcrinAdmin");
+    const UpdatedCols = UpdateColumnData(DashboardData.IsGpro);
+    setDashboardData( { ...DashboardData, ...response.data, columnData : UpdatedCols});
+  }
+  const UpdateColumnData = (IsGpro) =>{
+    if(IsGpro === "true"){
+      return [ 
+        {field: 'tin', headerName: 'TIN'},
+        {field: 'qM_Submission_Status', headerName: 'QM CMS Status'},
+        { field: 'qM_Score', headerName: 'QM Score' },
+        { field: 'iA_Submission_Status', headerName: 'IA CMS Status' },
+        { field: 'iA_Score', headerName: 'IA Score'  },
+      ]
+    }else{
+      return [ 
+        {field: 'tin', headerName: 'TIN'},
+        {field: 'qM_Submission_Status', headerName: 'Have all NPIs submitted Quality Measures?'},
+        { field: 'iA_Submission_Status', headerName: 'Have all NPIs submitted IA?' },
+      ]
+    }
+  }
   const handleRadioButtonChange = async (event) => {
     const value = event.target.value;
-    const response = await fetchCMSSubmissionDashboardData(DashboardData.SelectedYear, "administrator_100210",DashboardData.IsGpro,"AcrinAdmin");
-    const updatedDashboardData = { ...DashboardData, ...response.data, IsGpro: event.target.value}; 
+    const response = await fetchCMSSubmissionDashboardData(DashboardData.SelectedYear, "administrator_100210",value,"AcrinAdmin");
+    const UpdatedCols = UpdateColumnData(value);
+    const updatedDashboardData = { ...DashboardData, ...response.data, IsGpro: event.target.value, columnData : UpdatedCols}; 
     setDashboardData(updatedDashboardData);
     debugger;
-    return response;
+  };
+  const handleSubmitButtonChange = async (event) => {
+    const value = event.target.value;
+    const response = await fetchCMSSubmissionDashboardData(value, "administrator_100210",DashboardData.IsGpro,"AcrinAdmin");
+    const updatedDashboardData = { ...DashboardData, ...response.data, SelectedYear : event.target.value}; 
+    setDashboardData(updatedDashboardData);
+    debugger;
   };
 
+  useEffect(() => {
+    fetchData();
+  }, []); 
 
   return (
     <div style={{margin:'10px', border:'1px solid #5D737D'}}>
@@ -54,7 +87,13 @@ const SubmissionDashboard = () => {
             <Typography variant="h6"> CMS Submission Dashboard</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{background:'#fff', color:'#666666',display:'flex',flexDirection:'column',padding:'5px'}}>
-              <DropDownWithLabel InputLabel='CMSYear'  SelectedVal={DashboardData.SelectedYear} InputValues={[2019,2020,2021,2022,2023]} ShowButton='true' SubmitText='Get Details'/>
+              <DropDownWithLabel InputLabel='CMSYear'  
+                  SelectedVal={DashboardData.SelectedYear} 
+                  InputValues={[2019,2020,2021,2022,2023]} 
+                  ShowButton='false' 
+                  SubmitText='Get Details'
+                  SubmitButtonCallBack = {handleSubmitButtonChange}
+              />
 
                 <Grid container spacing={0} sx={{margin:'10px 0px' ,width: 'calc(100% - 3px)'}}>
                   <Grid item xs={5} sx={{border:'0px solid',padding:'10px'}}>
@@ -102,7 +141,7 @@ const SubmissionDashboard = () => {
 
                   </Grid>
                   <Grid item xs={7} sx={{border:'0px solid',padding:'0px'}}>
-                    <CustomDataGridTable />
+                    <CustomDataGridTable  ColumnData={DashboardData.columnData} RowData={DashboardData.dataList}/>
                   </Grid>
                 </Grid>
         </AccordionDetails>

@@ -24,7 +24,6 @@ export const fetchUserTINNpiData = async(tin, userName) =>{
 
 export const fetchCMSSubmissionDashboardData = async(year, userName, gpro, role) =>{
   try{
-    debugger;
     const response = await axios.post(`https://localhost:7030/Home/CmsDashboardDetails`
     ,{
       UserRole : role,
