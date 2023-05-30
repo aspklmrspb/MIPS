@@ -123,8 +123,8 @@ namespace MIPS_API.BL
                     data = dataTable.AsEnumerable().Select(Y => new GproTinStatus()
                     {
                         Tin = Y.Field<string>("TIN"),
-                        QM_Submission_Status = Y.Field<string>("IsQMSubmitted"),
-                        IA_Submission_Status = Y.Field<string>("IsIASubmitted")
+                        QM_Submission_Status = Y.Field<string>("IsQMSubmitted").ToString() != "Yes" ? "No,Please review your current measure selections." : "Yes" ,
+                        IA_Submission_Status = Y.Field<string>("IsIASubmitted").ToString() != "Yes" ? "No,Please review your current measure selections." : "Yes"
                     }).ToList();
                 }
             }
