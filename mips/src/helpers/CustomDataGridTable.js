@@ -131,6 +131,7 @@ export default function CustomDataGridTable(props) {
     const columns = props.ColumnData !== undefined ? props.ColumnData.map((obj) => {
         return {
               ...obj,
+            flex:1,
             align:'center', 
             headerAlign: 'center', 
             headerClassName:'table--header'
