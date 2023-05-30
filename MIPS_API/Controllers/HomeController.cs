@@ -99,7 +99,7 @@ namespace MIPS_API.Controllers
                     Role = 1;
                 }
 
-                var isyearstatus = CommonBL.CheckCMSYearStatus(request.CMSYear);
+                var isyearstatus = CommonBL.CheckCMSYearStatus(request.CMSYear, connectionString);
 
 
                 var data = CommonBL.CMSSubmittedTinsCount(request.CMSYear, request.UserName, Role, connectionString);

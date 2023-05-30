@@ -7,7 +7,7 @@ import RadioButtonsWithLabel from '../helpers/RadioButtonsWithLabel';
 import Grid from '@mui/material/Grid';
 import CustomDataGridTable from '../helpers/CustomDataGridTable';
 import styled from "@emotion/styled";
-
+import { fetchCMSSubmissionDashboardData } from '../API/HomeAPI';
 
 const TableRowStyled = styled(TableRow)`
   &:nth-of-type(odd) {
@@ -25,11 +25,25 @@ const TableCellStyled = styled(TableCell)`
 `;
 
 const SubmissionDashboard = () => {
-  const [IsGpro, setIsGpro] = useState("true");
+  const [DashboardData, setDashboardData] = useState({
+    SelectedYear : 2019,
+    IsGpro : "true",
+    dataList :[],
+    totalGproTins : 0,
+    totalNonGproTins : 0,
+    submittedGproTins : 0,
+    submittedNonGproTins : 0,
+    gproTinCount : 0,
+    nonGproTinCount : 0
+  });
 
   const handleRadioButtonChange = async (event) => {
     const value = event.target.value;
-    setIsGpro(value);
+    const response = await fetchCMSSubmissionDashboardData(DashboardData.SelectedYear, "administrator_100210",DashboardData.IsGpro,"AcrinAdmin");
+    const updatedDashboardData = { ...DashboardData, ...response.data, IsGpro: event.target.value}; 
+    setDashboardData(updatedDashboardData);
+    debugger;
+    return response;
   };
 
 
@@ -40,7 +54,7 @@ const SubmissionDashboard = () => {
             <Typography variant="h6"> CMS Submission Dashboard</Typography>
         </AccordionSummary>
         <AccordionDetails sx={{background:'#fff', color:'#666666',display:'flex',flexDirection:'column',padding:'5px'}}>
-              <DropDownWithLabel InputLabel='CMSYear'  SelectedVal='2023' InputValues={[2019,2020,2021,2022,2023]} ShowButton='true' SubmitText='Get Details'/>
+              <DropDownWithLabel InputLabel='CMSYear'  SelectedVal={DashboardData.SelectedYear} InputValues={[2019,2020,2021,2022,2023]} ShowButton='true' SubmitText='Get Details'/>
 
                 <Grid container spacing={0} sx={{margin:'10px 0px' ,width: 'calc(100% - 3px)'}}>
                   <Grid item xs={5} sx={{border:'0px solid',padding:'10px'}}>
@@ -50,7 +64,7 @@ const SubmissionDashboard = () => {
                         { RadioLabel : "GPRO", RadioValue : "true"},
                         { RadioLabel : "NON - GPRO", RadioValue : "false"},
                       ]}
-                      SelectedVal={IsGpro} 
+                      SelectedVal={DashboardData.IsGpro} 
                       RadioButtonCallBack={handleRadioButtonChange} // Updated prop name
                     />
 
@@ -59,22 +73,28 @@ const SubmissionDashboard = () => {
                         <TableHead>
                           <TableRow>
                             <TableCellStyled colSpan={2} sx={{fontWeight:'bold',border:'1px solid #ddd',color:'#000',textAlign:'center'}}>
-                              Number of {IsGpro === "true" ? 'TINS' : 'TIN-NPIs'} submitted as a {IsGpro === "true" ? 'group' : 'individuals'}
+                              Number of {DashboardData.IsGpro === "true" ? 'TINS' : 'TIN-NPIs'} submitted as a {DashboardData.IsGpro === "true" ? 'group' : 'individuals'}
                             </TableCellStyled>
                           </TableRow>
                         </TableHead>
                         <TableBody>
                           <TableRowStyled >
                             <TableCellStyled sx={{}} >Submitted to CMS</TableCellStyled>
-                            <TableCellStyled sx={{textAlign:'center'}} >125</TableCellStyled>
+                            <TableCellStyled sx={{textAlign:'center'}} >
+                                {DashboardData.IsGpro === "true" ? DashboardData.submittedGproTins : DashboardData.submittedNonGproTins }
+                            </TableCellStyled>
                           </TableRowStyled>
                           <TableRowStyled>
                             <TableCellStyled sx={{}} >Not Submitted to CMS</TableCellStyled>
-                            <TableCellStyled sx={{textAlign:'center'}} >50</TableCellStyled>
+                            <TableCellStyled sx={{textAlign:'center'}} >
+                                {DashboardData.IsGpro === "true" ? DashboardData.gproTinCount : DashboardData.nonGproTinCount }
+                            </TableCellStyled>
                           </TableRowStyled>
                           <TableRowStyled>
                             <TableCellStyled sx={{}} >Total</TableCellStyled>
-                            <TableCellStyled sx={{textAlign:'center'}} >175</TableCellStyled>
+                            <TableCellStyled sx={{textAlign:'center'}} >
+                                {DashboardData.IsGpro === "true" ? DashboardData.totalGproTins : DashboardData.totalNonGproTins }
+                            </TableCellStyled>
                           </TableRowStyled>
                         </TableBody>
                       </Table>

@@ -16,7 +16,7 @@ export default function DropDownWithLabel(props) {
     <div style={{fontWeight:'bold'}} > {props.InputLabel} &nbsp; : </div>
         <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
             <Select
-                value={inputval}
+                value={props.SelectedVal}
                 onChange={handleChange}
                 displayEmpty
                 inputProps={{ 'aria-label': 'Without label' }}

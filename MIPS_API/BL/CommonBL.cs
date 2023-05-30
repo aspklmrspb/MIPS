@@ -8,12 +8,30 @@ namespace MIPS_API.BL
 {
     internal static class CommonBL
     {
-        internal static IsYearCondititon CheckCMSYearStatus(int CMSYear)
+        internal static IsYearCondititon CheckCMSYearStatus(int CMSYear, string connectionString)
         {
 
             var isYearCondititon = new IsYearCondititon();
             try
             {
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "SELECT COUNT(*) FROM tbl_Lookup_Active_Submission_Year WHERE IsActive = 1 AND Submission_Year = @Year";
+                    string query2 = "SELECT COUNT(*) FROM tbl_Lookup_Active_Submission_Year WHERE IsActive = 1 AND Submission_Year = @Year AND IsSubmittoCMS= 1";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@Year", CMSYear);
+
+                    SqlCommand command2 = new SqlCommand(query2, connection);
+                    command2.Parameters.AddWithValue("@Year", CMSYear); // Replace with your actual condition value
+
+                    isYearCondititon.isActiveYear = (int)command.ExecuteScalar() > 0;
+                    isYearCondititon.isSubmittoCMS = (int)command2.ExecuteScalar() > 0;
+
+                }
             }
             catch (Exception ex)
             {
