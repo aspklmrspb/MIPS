@@ -64,7 +64,7 @@ export default function AccoridanHelper(props) {
         <AccordionDetails>
           <div>
             {
-              rowData.length != 0 &&
+              rowData.length !== 0 &&
               <CustomAccordianTable ColumnData={columnData} RowData={rowData} />
             }
           </div>

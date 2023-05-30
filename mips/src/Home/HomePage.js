@@ -21,7 +21,7 @@ const HomePage = ({isAuthenticated, userName }) => {
 
   useEffect(() => {
     fetchData();
-  }, [tinData]); 
+  }, []); 
 
   
   return (

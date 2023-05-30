@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualBasic;
 using MIPS_API.BL;
+using MIPS_API.Helpers;
 using MIPS_API.Models;
 using nrdr13.acr.org.SSOService;
 using System.Data;
+using System.Dynamic;
+using Constants = MIPS_API.Helpers.Constants;
 
 namespace MIPS_API.Controllers
 {
@@ -68,6 +72,54 @@ namespace MIPS_API.Controllers
                     //userid = Y.Field<int>("UserId")
                 }).ToArray());
             }
+        }
+
+        [HttpPost]
+        [Route("CmsDashboardDetails")]
+        public async Task<ActionResult> GetCmsSubmisisonDashBoardDetails(CmsDashboardRequest request)
+        {
+            int Role = 0;
+            string Npi = string.Empty;
+            dynamic model = new ExpandoObject();
+            try
+            {
+                if (request.UserRole.ToLower() == Constants.ACRinAdmin.ToLower())
+                {
+                    Role = 3;
+                }
+                else if (request.UserRole.ToLower() == Constants.FacilityAdmin.ToLower()
+               || (request.UserRole.ToLower() == Constants.RegistryAdmin.ToLower()
+               || request.UserRole.ToLower() == Constants.FacilityUser.ToLower()
+
+               || request.UserRole.ToLower() == Constants.SuperCorporateAdmin.ToLower()
+               || request.UserRole.ToLower() == Constants.CorporateAdmin.ToLower()
+               || request.UserRole.ToLower() == Constants.ServiceUser.ToLower()))
+
+                {
+                    Role = 1;
+                }
+
+                var isyearstatus = CommonBL.CheckCMSYearStatus(request.CMSYear);
+
+
+                var data = CommonBL.CMSSubmittedTinsCount(request.CMSYear, request.UserName, Role, connectionString);
+                data.IsSubmitToCMS = isyearstatus != null ? isyearstatus.isSubmittoCMS : false;
+                data.Role = Role;
+                data.IsGPRO = request.IsGpro != null ? (bool)request.IsGpro : true;
+                data.dataList = CommonBL.GproTinsCMSSubmittedDetails(request.CMSYear, data.IsGPRO, Role, request.UserName, connectionString);
+
+                model.data = data;
+                model.SelectedYear = request.CMSYear;
+                model.isActiveYear = isyearstatus.isActiveYear;
+                model.ISCMSSubmissionActive = isyearstatus.isSubmittoCMS != null ? (bool)isyearstatus.isSubmittoCMS : false;
+
+                return Ok(model);
+            }
+            catch (Exception Ex)
+            {
+
+            }
+            return BadRequest();
         }
     }
 }

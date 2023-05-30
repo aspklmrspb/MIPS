@@ -1,18 +1,90 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
+import { Table, TableBody, TableCell, TableContainer, TableHead, TableRow, Paper } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import DropDownWithLabel from '../helpers/DropDownWithLabel';
+import RadioButtonsWithLabel from '../helpers/RadioButtonsWithLabel';
+import Grid from '@mui/material/Grid';
+import CustomDataGridTable from '../helpers/CustomDataGridTable';
+import styled from "@emotion/styled";
+
+
+const TableRowStyled = styled(TableRow)`
+  &:nth-of-type(odd) {
+    background-color: #f2f2f2;
+  }
+  &:nth-of-type(even) {
+    background-color: #fff;
+  }
+`;
+
+const TableCellStyled = styled(TableCell)`
+  border: 1px solid #ddd;
+  color: #666666;
+  line-height: 0.3rem;
+`;
 
 const SubmissionDashboard = () => {
+  const [IsGpro, setIsGpro] = useState("true");
+
+  const handleRadioButtonChange = async (event) => {
+    const value = event.target.value;
+    setIsGpro(value);
+  };
+
+
   return (
     <div style={{margin:'10px', border:'1px solid #5D737D'}}>
         <Accordion sx={{background:'#4a5b63', color:'#fff', flexDirection:'row-reverse'}}>
         <AccordionSummary expandIcon={<ExpandMoreIcon sx={{color:'#fff'}}/>} aria-controls="accordion-content" id="accordion-header">
             <Typography variant="h6"> CMS Submission Dashboard</Typography>
         </AccordionSummary>
-        <AccordionDetails sx={{background:'#fff', color:'#666666'}}>
-            <Typography>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vel magna sed urna scelerisque sollicitudin.
-            </Typography>
+        <AccordionDetails sx={{background:'#fff', color:'#666666',display:'flex',flexDirection:'column',padding:'5px'}}>
+              <DropDownWithLabel InputLabel='CMSYear'  SelectedVal='2023' InputValues={[2019,2020,2021,2022,2023]} ShowButton='true' SubmitText='Get Details'/>
+
+                <Grid container spacing={0} sx={{margin:'10px 0px' ,width: 'calc(100% - 3px)'}}>
+                  <Grid item xs={5} sx={{border:'0px solid',padding:'10px'}}>
+                    <h3 className = "acr-heading">Select category to view CMS Submission Details &nbsp;&nbsp;&nbsp;</h3>
+                    <RadioButtonsWithLabel 
+                      RadioValuePairs={[
+                        { RadioLabel : "GPRO", RadioValue : "true"},
+                        { RadioLabel : "NON - GPRO", RadioValue : "false"},
+                      ]}
+                      SelectedVal={IsGpro} 
+                      RadioButtonCallBack={handleRadioButtonChange} // Updated prop name
+                    />
+
+                    <TableContainer component={Paper} >
+                      <Table>
+                        <TableHead>
+                          <TableRow>
+                            <TableCellStyled colSpan={2} sx={{fontWeight:'bold',border:'1px solid #ddd',color:'#000',textAlign:'center'}}>
+                              Number of {IsGpro === "true" ? 'TINS' : 'TIN-NPIs'} submitted as a {IsGpro === "true" ? 'group' : 'individuals'}
+                            </TableCellStyled>
+                          </TableRow>
+                        </TableHead>
+                        <TableBody>
+                          <TableRowStyled >
+                            <TableCellStyled sx={{}} >Submitted to CMS</TableCellStyled>
+                            <TableCellStyled sx={{textAlign:'center'}} >125</TableCellStyled>
+                          </TableRowStyled>
+                          <TableRowStyled>
+                            <TableCellStyled sx={{}} >Not Submitted to CMS</TableCellStyled>
+                            <TableCellStyled sx={{textAlign:'center'}} >50</TableCellStyled>
+                          </TableRowStyled>
+                          <TableRowStyled>
+                            <TableCellStyled sx={{}} >Total</TableCellStyled>
+                            <TableCellStyled sx={{textAlign:'center'}} >175</TableCellStyled>
+                          </TableRowStyled>
+                        </TableBody>
+                      </Table>
+                    </TableContainer>
+
+                  </Grid>
+                  <Grid item xs={7} sx={{border:'0px solid',padding:'0px'}}>
+                    <CustomDataGridTable />
+                  </Grid>
+                </Grid>
         </AccordionDetails>
         </Accordion>
     </div>
