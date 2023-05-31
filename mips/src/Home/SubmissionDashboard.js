@@ -66,14 +66,12 @@ const SubmissionDashboard = () => {
     const UpdatedCols = UpdateColumnData(value);
     const updatedDashboardData = { ...DashboardData, ...response.data, IsGpro: event.target.value, columnData : UpdatedCols}; 
     setDashboardData(updatedDashboardData);
-    debugger;
   };
   const handleSubmitButtonChange = async (event) => {
     const value = event.target.value;
     const response = await fetchCMSSubmissionDashboardData(value, "administrator_100210",DashboardData.IsGpro,"AcrinAdmin");
     const updatedDashboardData = { ...DashboardData, ...response.data, SelectedYear : event.target.value}; 
     setDashboardData(updatedDashboardData);
-    debugger;
   };
 
   useEffect(() => {
