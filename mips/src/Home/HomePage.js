@@ -4,6 +4,7 @@ import SubmissionDashboard from './SubmissionDashboard';
 import AccoridanHelper from '../helpers/AccoridanHelper';
 import Box from '@mui/material/Box';
 import {fetchUserTinData, fetchUserTINNpiData} from '../API/HomeAPI';
+import FullFeaturedTable from '../helpers/FullFeaturedTable';
 
 const HomePage = ({isAuthenticated, userName }) => {
   const [tinData, setTinData] = useState([]);

@@ -2,131 +2,13 @@ import * as React from 'react';
 import { DataGrid, GridToolbarContainer, GridToolbarExport } from '@mui/x-data-grid';
 import Box from '@mui/material/Box';
 
-const rows = [
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 1 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 2 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 3 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 4 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 5 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 6 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 7 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 8 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 9 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 10 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id :11 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 12 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 13 
-    },
-    {
-        tin :"123456789",
-        qmCMSScore:'No',
-        qmScore:0.00,
-        iaCMSSCore:'Yes',
-        iaScore:4.50,
-        id : 14 ,
-        test2:'dsd'
-    }
-  ];
-
-
-
-  function CustomToolbar() {
+function CustomToolbar() {
     return (
-      <GridToolbarContainer>
+        <GridToolbarContainer>
         <GridToolbarExport />
-      </GridToolbarContainer>
+        </GridToolbarContainer>
     );
-  }
+}
 export default function CustomDataGridTable(props) {
     const columns = props.ColumnData !== undefined ? props.ColumnData.map((obj) => {
         return {
@@ -155,7 +37,7 @@ export default function CustomDataGridTable(props) {
             }}
             >
             <DataGrid 
-                sx={{width: '100%'}}
+                sx={{width: '100%', overflow:'auto'}}
                 components={{Toolbar: CustomToolbar,}}
                 rows={rows} 
                 columns={columns}
