@@ -5,6 +5,7 @@ using MIPS_API.BL;
 using MIPS_API.Helpers;
 using MIPS_API.Models;
 using nrdr13.acr.org.SSOService;
+using System.Collections.Generic;
 using System.Data;
 using System.Dynamic;
 using Constants = MIPS_API.Helpers.Constants;
@@ -120,6 +121,22 @@ namespace MIPS_API.Controllers
 
             }
             return BadRequest();
+        }
+
+        [HttpGet]
+        [Route("GetPhysicianNPIsandAttestedCount")]
+        public async Task<ActionResult> GetPhysicianNPIsandAttestedCountForAdminGrid()
+        {
+            List<int[]> data = await HomeBL.GetPhysicianNPIsandAttestedCount(connectionString);
+            if(data != null)
+            {
+                return Ok(data.ToArray());
+            }
+            else
+            {
+                return BadRequest();
+            }
+
         }
     }
 }

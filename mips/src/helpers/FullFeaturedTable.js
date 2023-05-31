@@ -116,7 +116,7 @@ export default function FullFeaturedTable(props) {
                 styleOverrides: {
                     root: {
 
-                        minHeight: '50px !important',
+                        minHeight: '30px !important',
                         backgroundColor: '#072C40',
                         color: '#fff !important'
                     },
@@ -130,7 +130,9 @@ export default function FullFeaturedTable(props) {
                             minHeight: '50px !important'
                         },
                         textAlign: 'center',
-                        border: '1px solid #ddd'
+                        border: '1px solid #ddd',
+                        fontSize:'0.75rem',
+                        lineHeight : '0.3'
                     },
                 },
             },
@@ -163,7 +165,7 @@ export default function FullFeaturedTable(props) {
                         '& .MuiTableCell-root': {
                             backgroundColor: '#2f454e',
                             color: '#fff',
-                            height: '20px'
+                            padding:'0'
                         }
                     }
                 }
@@ -172,7 +174,10 @@ export default function FullFeaturedTable(props) {
                 styleOverrides: {
                     root: {
                         width: '100%',
-                        color: '#fff !important'
+                        color: '#fff !important',
+                        '& div' :{
+                            textTransform : 'none'
+                        }
                     }
                 }
             },
@@ -189,13 +194,19 @@ export default function FullFeaturedTable(props) {
                         color: '#fff'
                     }
                 }
+            },
+            MuiPaper:{
+                styleOverrides:{
+                    root :{
+                        padding:'5px'
+                    }
+                }
             }
         },
     });
-
     return (
         <ThemeProvider theme={getMuiTheme()}>
-            <MUIDataTable title={"ACME Employee list"} data={props.rows} columns={props.columns} options={options} />
+            <MUIDataTable title={props.title} data={props.RowData} columns={props.ColumnData} options={options} />
         </ThemeProvider>
     );
 }
