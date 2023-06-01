@@ -48,3 +48,16 @@ export const fetchNPIsandNPIsAttestedCount = async (userName) => {
   }
 
 };
+
+export const fetchPhysicianRegistrationDetails = async(CatId, text) => {
+  try {
+    const response = await axios.post(`https://localhost:7030/Home/GetPhysicianDetailswithRegistrationStatus`,{
+      "CategoryId" : parseInt(CatId),
+      "SearchText" : text
+    });
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching user tins:', error);
+    throw error;
+  }
+}

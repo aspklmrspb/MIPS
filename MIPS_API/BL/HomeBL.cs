@@ -104,5 +104,34 @@ namespace MIPS_API.BL
             return data;
         }
 
+        public static async Task<DataTable> GetPhysicianDetailswithRegistrationStatus(int CategoryId, string SearchText, string ConnectionString)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                // Create and configure the SqlConnection
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Create the SqlCommand to execute the stored procedure
+                    using (SqlCommand command = new SqlCommand("PhysicianDetailswithRegistrationStatus", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@CategoryId", CategoryId);
+                        command.Parameters.AddWithValue("@SearchText", SearchText);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+            }
+            return dataTable;
+        }
     }
 }

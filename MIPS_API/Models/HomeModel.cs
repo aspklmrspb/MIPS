@@ -43,4 +43,10 @@
         public int AttestedCount { get; set; }
         public int PhysicianNPIsCount { get; set; }
     }
+
+    public class PhysicianRegDetailsGridRequest
+    {
+        public int CategoryId { get; set; }
+        public string SearchText { get; set; }
+    }
 }

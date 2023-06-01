@@ -8,6 +8,7 @@ using nrdr13.acr.org.SSOService;
 using System.Collections.Generic;
 using System.Data;
 using System.Dynamic;
+using System.Net.Mail;
 using Constants = MIPS_API.Helpers.Constants;
 
 namespace MIPS_API.Controllers
@@ -137,6 +138,28 @@ namespace MIPS_API.Controllers
                 return BadRequest();
             }
 
+        }
+
+        [HttpPost]
+        [Route("GetPhysicianDetailswithRegistrationStatus")]
+        public async Task<ActionResult> GetPhysicianDetailswithRegistrationStatus(PhysicianRegDetailsGridRequest request)
+        {
+            DataTable data = await HomeBL.GetPhysicianDetailswithRegistrationStatus(request.CategoryId, request.SearchText, connectionString);
+
+            if (data != null)
+            {
+                return Ok(data.AsEnumerable().Select( Y=> new string[5]{
+                    Y.Field<string>("FirstName"),
+                    Y.Field<string>("LastName"),
+                    Y.Field<string>("UserName"),
+                    Y.Field<string>("EMail_Address"),
+                    Y.Field<string>("Status")
+                }).ToArray());
+            }
+            else
+            {
+                return BadRequest();
+            }
         }
     }
 }

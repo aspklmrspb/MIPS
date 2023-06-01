@@ -198,7 +198,8 @@ export default function FullFeaturedTable(props) {
             MuiPaper:{
                 styleOverrides:{
                     root :{
-                        padding:'5px'
+                        padding:'10px',
+                        boxShadow:'none'
                     }
                 }
             }

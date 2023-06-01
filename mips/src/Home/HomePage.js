@@ -5,19 +5,20 @@ import AccoridanHelper from '../helpers/AccoridanHelper';
 import Box from '@mui/material/Box';
 import { fetchUserTinData, fetchUserTINNpiData, fetchNPIsandNPIsAttestedCount } from '../API/HomeAPI';
 import FullFeaturedTable from '../helpers/FullFeaturedTable';
+import PhysicianRegistrationResult from './PhysicianRegistrationDetails';
 
 const HomePage = ({ isAuthenticated, userName, userRole }) => {
   const [tinData, setTinData] = useState([]);
   const [NPIAttestedData, setNPIAttestedData] = useState([]);
+  const [expandTab, setExpandTab] = useState(false);
 
   async function fetchData() {
     // You can await here
-    debugger;
-    if(userRole === "FacilityUser"){
+    if (userRole === "FacilityUser") {
       const response = await fetchUserTinData(userName);
       setTinData(response);
-    
-    }else if(userRole === "AcrinAdmin"){
+
+    } else if (userRole === "AcrinAdmin") {
       const npigridresponse = await fetchNPIsandNPIsAttestedCount();
       setNPIAttestedData(npigridresponse);
 
@@ -41,7 +42,7 @@ const HomePage = ({ isAuthenticated, userName, userRole }) => {
       <InformationList userRole={userRole} userName={userName} />
       <SubmissionDashboard />
       <Box sx={{ margin: '10px' }}>
-        <div id="treeMenu" className="">
+        <div id="treeMenu" style={{ margin: '30px 0px' }}>
           <ul>
             <li>
               <label className="parentxt ui-dialog-titlebar ui-widget-header ui-corner-top hmeHead">
@@ -57,10 +58,10 @@ const HomePage = ({ isAuthenticated, userName, userRole }) => {
           </div>
         </div>
       </Box>
-      <div style={{ marginTop: '30px' }}>
+      <div>
         {
-          userRole === "FacilityUser" 
-          && 
+          userRole === "FacilityUser"
+          &&
           tinData.map((row) => {
             return <AccoridanHelper dataRow={row} key={`tin-${row.tin}-${row.IS_GPRO}`} expandFunction={expandCallbackFunction} />
           })
@@ -68,16 +69,19 @@ const HomePage = ({ isAuthenticated, userName, userRole }) => {
         {
           userRole === "AcrinAdmin"
           &&
-          <FullFeaturedTable
-            title="Physician NPI and Attested History"
-            ShowSearchBtn={false}
-            showDownloadBtn= {false}
-            showViewColumnBtn = {false}
-            showFilterBtn = {false}
-            RowData = {NPIAttestedData}
-            ColumnData = {["CMS Year","Physician NPI Count","Physician Attested Count"]}
-            responsive ="standard"
-          />  
+          <>
+            <FullFeaturedTable
+              title="Physician NPI and Attested History"
+              ShowSearchBtn={false}
+              showDownloadBtn={false}
+              showViewColumnBtn={false}
+              showFilterBtn={false}
+              RowData={NPIAttestedData}
+              ColumnData={["CMS Year", "Physician NPI Count", "Physician Attested Count"]}
+              responsive="standard"
+            />
+            <PhysicianRegistrationResult />
+          </>
         }
       </div>
     </div>

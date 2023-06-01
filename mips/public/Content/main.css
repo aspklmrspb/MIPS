@@ -49,6 +49,14 @@ input[disabled="disabled"], textarea[disabled="disabled"], select[disabled="disa
     resize: none;
 }
 
+input[type="text"].MuiInputBase-input,
+input[type="text"]:focus.MuiInputBase-input{
+    border :0px;
+    background: none;
+    box-shadow: none;
+    padding:8px;
+}
+
 input[type="text"], input[type="password"], input[type="date"], textarea, select {
     /*padding: 3px;
     border-top-color: #bab3b3;*/
@@ -1297,7 +1305,7 @@ tr.Chaild-Grid-Opener-tr > td > span {
     -o-border-radius: 5px;
     float: right;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     overflow-y: auto;
     overflow-x: auto;
 }
