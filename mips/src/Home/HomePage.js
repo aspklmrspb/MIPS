@@ -7,6 +7,7 @@ import { fetchUserTinData, fetchUserTINNpiData, fetchNPIsandNPIsAttestedCount } 
 import FullFeaturedTable from '../helpers/FullFeaturedTable';
 import PhysicianRegistrationResult from './PhysicianRegistrationDetails';
 
+
 const HomePage = ({ isAuthenticated, userName, userRole }) => {
   const [tinData, setTinData] = useState([]);
   const [NPIAttestedData, setNPIAttestedData] = useState([]);
