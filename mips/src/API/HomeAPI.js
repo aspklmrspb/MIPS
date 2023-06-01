@@ -37,3 +37,14 @@ export const fetchCMSSubmissionDashboardData = async (year, userName, gpro, role
     throw error;
   }
 }
+
+export const fetchNPIsandNPIsAttestedCount = async (userName) => {
+  try {
+    const response = await axios.get(`https://localhost:7030/Home/GetPhysicianNPIsandAttestedCount`);
+    return response.data;
+  } catch (error) {
+    console.error('Error fetching user tins:', error);
+    throw error;
+  }
+
+};

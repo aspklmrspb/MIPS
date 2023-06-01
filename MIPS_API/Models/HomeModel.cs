@@ -36,4 +36,11 @@
         public bool isSubmittoCMS { get; set; }
         public bool isActiveYear { get; set; }
     }
+
+    public class PhysicianNPIsandAttestedResultGrid
+    {
+        public int CMSYear { get; set; }
+        public int AttestedCount { get; set; }
+        public int PhysicianNPIsCount { get; set; }
+    }
 }

@@ -37,7 +37,7 @@ export default function CustomDataGridTable(props) {
             }}
             >
             <DataGrid 
-                sx={{width: '100%', overflow:'auto'}}
+                sx={{width: '100%'}}
                 components={{Toolbar: CustomToolbar,}}
                 rows={rows} 
                 columns={columns}

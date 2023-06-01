@@ -5,7 +5,7 @@ import MuiAccordion from '@mui/material/Accordion';
 import MuiAccordionSummary from '@mui/material/AccordionSummary';
 import MuiAccordionDetails from '@mui/material/AccordionDetails';
 import Typography from '@mui/material/Typography';
-import {CustomAccordianTable} from './CustomTables';
+import { CustomAccordianTable } from './CustomTables';
 
 const Accordion = styled((props) => (
   <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -63,6 +63,9 @@ export default function AccoridanHelper(props) {
         </AccordionSummary>
         <AccordionDetails>
           <div>
+            {
+              props.Component
+            }
             {
               rowData.length !== 0 &&
               <CustomAccordianTable ColumnData={columnData} RowData={rowData} />

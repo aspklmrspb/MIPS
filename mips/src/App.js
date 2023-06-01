@@ -26,7 +26,7 @@ const App = () => {
         <Route
           path="*"
           element={
-            <PrivateRoute isAuthenticated={isAuthenticated} element = {<HomePage />}>
+            <PrivateRoute isAuthenticated={isAuthenticated} element = {<HomePage userRole="AcrinAdmin" userName="administrator_100210" />}>
             </PrivateRoute>
           }
         />
