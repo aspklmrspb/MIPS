@@ -51,6 +51,13 @@ const MenuBar = () => {
           value="/contact"
           selected={isActiveTab('/contact')}
         />
+        <Tab
+          label="Performance Report"
+          component={Link}
+          to="/tinaggregation/index" // Update the value to match the nested route
+          value="/tinaggregation/index" // Update the value to match the nested route
+          selected={isActiveTab('/tinaggregation/index')} // Update the value to match the nested route
+        />
       </Tabs>
       <div className="popover-container">
         <ListItem button onClick={handleClick}>

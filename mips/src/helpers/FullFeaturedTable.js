@@ -96,6 +96,13 @@ export default function FullFeaturedTable(props) {
                 size: props.tableSize,
             };
         },
+        onTableChange: (action, tableState) => {
+            console.log(action, tableState);
+    
+            // a developer could react to change on an action basis or
+            // examine the state as a whole and do whatever they want
+            debugger;    
+          },
     };
 
 

@@ -80,7 +80,7 @@ const SubmissionDashboard = () => {
 
   return (
     <div style={{ margin: '10px', border: '1px solid #5D737D' }}>
-      <Accordion sx={{ background: '#4a5b63', color: '#fff', flexDirection: 'row-reverse' }}>
+      <Accordion sx={{ background: '#4a5b63', color: '#fff', flexDirection: 'row-reverse' }} defaultExpanded={true}>
         <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: '#fff' }} />} aria-controls="accordion-content" id="accordion-header">
           <Typography variant="h6"> CMS Submission Dashboard</Typography>
         </AccordionSummary>
