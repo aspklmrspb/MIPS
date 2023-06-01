@@ -8,10 +8,12 @@ import HomePage from './Home/HomePage';
 import RecordsEntered from './Measure/RecordsEntered';
 import TinAggregationIndex from './TinAggregation/TinAggregationIndex';
 import TinAggregation from './TinAggregation/TinAggregation';
+import { useSelector } from 'react-redux';
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
-
+  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+debugger;
   return (
     <Router>
       {isAuthenticated && <MenuBar />}
