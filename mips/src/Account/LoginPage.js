@@ -29,7 +29,6 @@ const LoginPage = ({ setIsAuthenticated }) => {
       
       }).catch( (err) => {
         console.log(err);
-        debugger;
       });
       // Do something with the response
     } catch (error) {
