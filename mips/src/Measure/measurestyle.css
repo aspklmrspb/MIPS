@@ -1,0 +1,6 @@
+input[type="text"].MuiInputBase-input,
+input[type="text"]:focus.MuiInputBase-input,
+input[type="Number"].MuiInputBase-input,
+input[type="Number"]:focus.MuiInputBase-input{
+    height:20px !important;
+}

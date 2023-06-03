@@ -86,9 +86,9 @@ const SubmissionDashboard = () => {
         </AccordionSummary>
         <AccordionDetails sx={{ background: '#fff', color: '#666666', display: 'flex', flexDirection: 'column', padding: '5px' }}>
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', width: '100%', marginBottom: '10px' }} >
-            <DropDownWithLabel InputLabel='CMSYear'
+            <DropDownWithLabel label='CMSYear'
               SelectedVal={DashboardData.SelectedYear}
-              InputValues={[2019, 2020, 2021, 2022, 2023]}
+              DropDownValues={[2019, 2020, 2021, 2022, 2023]}
               ShowButton='false'
               SubmitText='Get Details'
               DropDownChangeCallback={handleSubmitButtonChange}

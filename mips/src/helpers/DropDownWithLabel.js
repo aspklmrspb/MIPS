@@ -12,7 +12,7 @@ import Button from '@mui/material/Button';
 //DropDownChangeCallback : Select button onchange event callback funtion
 //showDefaultText : True | False
 // InputValues : Dropdown values
-//InputValuePairs : Dropdown Valus with different Label
+//LabelValuePairs : Dropdown Valus with different Label
 
 export default function DropDownWithLabel(props) {
     const [inputval, setInputVal] = React.useState(props.SelectedVal);
@@ -23,14 +23,14 @@ export default function DropDownWithLabel(props) {
 
     return (
         <>
-            <div style={{ fontWeight: 'bold', margin:'0px 8px' }} > {props.InputLabel} &nbsp; : </div>
+            <div style={{ fontWeight: 'bold', margin: '8px 8px 0px' }} > {props.label} &nbsp; : </div>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <Select
                     value={props.SelectedVal}
                     onChange={props.DropDownChangeCallback}
                     displayEmpty
                     inputProps={{ 'aria-label': 'Without label' }}
-                    name = {props.name}
+                    name={props.name}
 
                 >
                     {
@@ -41,16 +41,16 @@ export default function DropDownWithLabel(props) {
 
                     }
                     {
-                        props.InputValues !== undefined && props.InputValues.length > 0 &&
+                        props.DropDownValues !== undefined && props.DropDownValues.length > 0 &&
 
-                        props.InputValues?.map((val, index) => (
+                        props.DropDownValues?.map((val, index) => (
                             <MenuItem value={val} key={`${index}_${val}`} >{val}</MenuItem>
                         ))
                     }
                     {
-                        props.InputValuePairs !== undefined && props.InputValuePairs.length > 0 &&
+                        props.LabelValuePairs !== undefined && props.LabelValuePairs.length > 0 &&
 
-                        props.InputValuePairs?.map((row, index) => (
+                        props.LabelValuePairs?.map((row, index) => (
                             Object.entries(row).map(([label, value]) => (
                                 <MenuItem value={value} key={`${index}_${label}`} >{label}</MenuItem>
 

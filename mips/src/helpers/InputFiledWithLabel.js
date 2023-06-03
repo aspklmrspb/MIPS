@@ -2,9 +2,6 @@ import React, { useState, useEffect } from 'react';
 import TextField from '@mui/material/TextField';
 import InputAdornment from '@mui/material/InputAdornment';
 
-
-
-
 export const BasicTextField = (props) => {
     const [show, setShowPassword] = useState(false);
     const IconDetails = props.IconDetails === undefined ? "" : {
@@ -19,7 +16,7 @@ export const BasicTextField = (props) => {
 
     return (
         <>
-            <div style={{ fontWeight: 'bold',margin:'8px'}} > {props.InputLabel !== undefined ? `${props.InputLabel} : `:""}</div>
+            <div style={{ fontWeight: 'bold',margin:'8px'}} > {props.label !== undefined ? `${props.label} : `:""}</div>
             &nbsp;
             <TextField
                 variant={props.variantType}
@@ -30,7 +27,7 @@ export const BasicTextField = (props) => {
                 size={props.Size}
                 InputProps={IconDetails}
                 type={props.type}
-                value={props.InputValue}
+                value={props.value}
                 name = {props.name}
             />
 

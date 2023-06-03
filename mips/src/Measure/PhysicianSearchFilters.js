@@ -1,6 +1,10 @@
 import Grid from '@mui/material/Grid';
-import { BasicTextField } from '../helpers/InputFileds';
+import { BasicTextField } from '../helpers/InputFiledWithLabel';
 import DropDownWithLabel from '../helpers/DropDownWithLabel';
+import { DatePickerWithLabel } from '../helpers/DatePickerWithLabel';
+import Button from '@mui/material/Button';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
+import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 export const PhysicianSearchFilters = (props) => {
     const PatientSexValues = [
@@ -11,88 +15,131 @@ export const PhysicianSearchFilters = (props) => {
     ];
     return (
         <div>
-            <Grid container spacing={1} sx={{ padding: '10px' }}>
-                <Grid item xs={12} sm={6} md={3}>
+            <Grid container spacing={1} sx={{ padding: '0px' }}>
+                <Grid item xs={12} sm={6} md={3} >
                     <BasicTextField
-                        InputLabel="Physician NPI"
+                        label="Physician NPI"
                         LabelPosition="top"
-                        InputValue = {props.filterData.physiciannpi}
+                        value={props.filterData.physiciannpi}
                         HandleInputChange={props.HandleInputChange}
                         name="physiciannpi"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <BasicTextField
-                        InputLabel="TIN"
+                        label="TIN"
                         LabelPosition="top"
                         Size="small"
-                        InputValue = {props.filterData.tin}
+                        value={props.filterData.tin}
                         HandleInputChange={props.HandleInputChange}
                         name="tin"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <BasicTextField
-                        InputLabel="Measure"
+                        label="Measure"
                         LabelPosition="top"
                         Size="small"
-                        InputValue = {props.filterData.measure}
+                        value={props.filterData.measure}
                         HandleInputChange={props.HandleInputChange}
                         name="measure"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <BasicTextField
-                        InputLabel="Patient Age"
+                        label="Patient Age"
                         LabelPosition="top"
                         type="Number"
                         Size="small"
-                        InputValue = {props.filterData.patientage}
+                        value={props.filterData.patientage}
                         HandleInputChange={props.HandleInputChange}
                         name="patientage"
                     />
                 </Grid>
             </Grid>
-            <Grid container spacing={1} sx={{ padding: '10px' }}>
+            <Grid container spacing={1} sx={{ padding: '0px' }}>
                 <Grid item xs={12} sm={6} md={3}>
                     <BasicTextField
-                        InputLabel="ExamuniqueId"
+                        label="ExamuniqueId"
                         LabelPosition="top"
                         Size="small"
-                        InputValue = {props.filterData.examuniqueid}
+                        value={props.filterData.examuniqueid}
                         HandleInputChange={props.HandleInputChange}
                         name="examuniqueid"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <BasicTextField
-                        InputLabel="PatientId"
+                        label="PatientId"
                         LabelPosition="top"
                         Size="small"
-                        InputValue = {props.filterData.patientid}
+                        value={props.filterData.patientid}
                         HandleInputChange={props.HandleInputChange}
                         name="patientid"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <DropDownWithLabel
-                        InputValuePairs={PatientSexValues}
-                        InputLabel="Patient Sex"
-                        SelectedVal = {props.filterData.patientsex}
+                        LabelValuePairs={PatientSexValues}
+                        label="Patient Sex"
+                        SelectedVal={props.filterData.patientsex}
                         showDefaultText="true"
                         DropDownChangeCallback={props.HandleInputChange}
-                        name ="patientsex"
+                        name="patientsex"
                     />
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
                     <BasicTextField
-                        InputLabel="CPT Code"
+                        label="CPT Code"
                         LabelPosition="top"
                         Size="small"
-                        InputValue = {props.filterData.cptcode}
+                        value={props.filterData.cptcode}
                         HandleInputChange={props.HandleInputChange}
                         name="cptcode"
-                        />
+                    />
+                </Grid>
+            </Grid>
+            <Grid container spacing={1} sx={{ padding: '0px' }}>
+                <Grid item xs={12} sm={6} md={3}>
+                    <DatePickerWithLabel
+                        label="From Date "
+                        value={props.filterData.fromdate}
+                        name="fromdate"
+                        HandleDateInputChange={props.HandleFromDateChange}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                    <DatePickerWithLabel
+                        label="To Date "
+                        value={props.filterData.todate}
+                        name="todate"
+                        HandleDateInputChange={props.HandleToDateChange}
+                    />
+                </Grid>
+                <Grid item xs={12} sm={6} md={3} >
+                    <div style={{ display: 'flex', justifyContent: 'space-evenly', paddingTop: '25px' }}>
+                        <Button variant="contained" size="large" color='success'
+                            onClick={props.SubmitBtnClick}
+                        >
+                            Search
+                        </Button>
+                        <Button variant="contained" size="large" color='error'
+                            onClick={props.ResetBtnClick}
+                        >
+                            Reset
+                        </Button>
+                        
+                    </div>
+                </Grid>
+                <Grid item xs={12} sm={6} md={3}>
+                    <div style={{display:'flex'}}>
+                    <div style={{margin:'10px 5px',color:'rgb(0, 99, 204)',fontSize:'3rem'}}>
+                            <CloudDownloadIcon />
+                        </div>
+                        <div style={{margin:'10px 5px',color:'rgb(0, 99, 204)',fontSize:'3rem'}}>
+                            <PictureAsPdfIcon />
+                        </div>
+                    </div>
                 </Grid>
             </Grid>
         </div>

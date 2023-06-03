@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Accordion, AccordionSummary, AccordionDetails, Typography } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import DropDownWithLabel from '../helpers/DropDownWithLabel';
-import { BasicTextField } from '../helpers/InputFileds';
+import { BasicTextField } from '../helpers/InputFiledWithLabel';
 import Button from '@mui/material/Button';
 import { fetchPhysicianRegistrationDetails } from '../API/HomeAPI';
 import FullFeaturedTable from '../helpers/FullFeaturedTable';
@@ -44,9 +44,9 @@ export default function PhysicianRegistrationResult() {
                 <AccordionDetails sx={{ background: '#fff', color: '#666666', display: 'flex', flexDirection: 'column', padding: '5px' }}>
                     <Typography variant='div' sx={{ padding: '5px' }}>
                         <div style={{ display: 'flex', justifyContent: 'flex-start', alignItems: 'center', width: '100%', marginBottom: '10px' }} >
-                            <DropDownWithLabel InputLabel='Registration Search Filter '
+                            <DropDownWithLabel label='Registration Search Filter '
                                 SelectedVal={selectCat}
-                                InputValuePairs={PhysicainSearchCatgeories}
+                                LabelValuePairs={PhysicainSearchCatgeories}
                                 ShowButton='false'
                                 DropDownChangeCallback={handleSubmitButtonChange}
                             />
@@ -54,9 +54,9 @@ export default function PhysicianRegistrationResult() {
                             {
                                 selectCat === 0 ?
 
-                                    <DropDownWithLabel InputLabel='Registration Status For Physician  '
+                                    <DropDownWithLabel label='Registration Status For Physician  '
                                         SelectedVal={searchText}
-                                        InputValues={['All', 'True', 'False']}
+                                        DropDownValues={['All', 'True', 'False']}
                                         ShowButton='false'
                                         DropDownChangeCallback={(event) => setSearchText(event.target.value)}
                                     />
@@ -65,8 +65,8 @@ export default function PhysicianRegistrationResult() {
                                         <BasicTextField
                                             variantType="outlined"
                                             placeholder="Enter Search Text"
-                                            InputLabel="Search"
-                                            InputValue={searchText}
+                                            label="Search"
+                                            value={searchText}
                                             HandleInputChange={(event) => setSearchText(event.target.value)}
                                         />
                                     </>
