@@ -91,7 +91,7 @@ const SubmissionDashboard = () => {
               InputValues={[2019, 2020, 2021, 2022, 2023]}
               ShowButton='false'
               SubmitText='Get Details'
-              SubmitButtonCallBack={handleSubmitButtonChange}
+              DropDownChangeCallback={handleSubmitButtonChange}
             />
           </div>
           <Grid container spacing={0} sx={{ margin: '10px 0px', width: 'calc(100% - 3px)' }}>

@@ -19,7 +19,7 @@ export const BasicTextField = (props) => {
 
     return (
         <>
-            <div style={{ fontWeight: 'bold' }} > {props.InputLabel !== undefined ? `${props.InputLabel} : `:""}</div>
+            <div style={{ fontWeight: 'bold',margin:'8px'}} > {props.InputLabel !== undefined ? `${props.InputLabel} : `:""}</div>
             &nbsp;
             <TextField
                 variant={props.variantType}
@@ -31,6 +31,7 @@ export const BasicTextField = (props) => {
                 InputProps={IconDetails}
                 type={props.type}
                 value={props.InputValue}
+                name = {props.name}
             />
 
         </>
@@ -60,6 +61,7 @@ export const BasicTextArea = (props) => {
                 maxRows={props.TextArea.MaxRows}
                 type={props.type}
                 InputProps={IconDetails}
+                name = {props.name}
                 value={props.InputValue}
             />
         </>

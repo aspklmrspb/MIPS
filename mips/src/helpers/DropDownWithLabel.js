@@ -4,6 +4,16 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 import Button from '@mui/material/Button';
+
+
+/// Description 
+//SelectedVal  :  Value of Dropdown 
+//InputLabel : Label of Dropdown
+//DropDownChangeCallback : Select button onchange event callback funtion
+//showDefaultText : True | False
+// InputValues : Dropdown values
+//InputValuePairs : Dropdown Valus with different Label
+
 export default function DropDownWithLabel(props) {
     const [inputval, setInputVal] = React.useState(props.SelectedVal);
 
@@ -13,18 +23,20 @@ export default function DropDownWithLabel(props) {
 
     return (
         <>
-            <div style={{ fontWeight: 'bold' }} > {props.InputLabel} &nbsp; : </div>
+            <div style={{ fontWeight: 'bold', margin:'0px 8px' }} > {props.InputLabel} &nbsp; : </div>
             <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
                 <Select
                     value={props.SelectedVal}
-                    onChange={props.SubmitButtonCallBack}
+                    onChange={props.DropDownChangeCallback}
                     displayEmpty
                     inputProps={{ 'aria-label': 'Without label' }}
+                    name = {props.name}
+
                 >
                     {
                         props.showDefaultText !== undefined &&
                         <MenuItem value="">
-                            <em>-------Select-------- </em>
+                            <em>--- Select --- </em>
                         </MenuItem>
 
                     }
@@ -61,7 +73,7 @@ export default function DropDownWithLabel(props) {
                         }
                     }
                     }
-                    onClick={props.SubmitButtonCallBack}
+                    onClick={props.DropDownChangeCallback}
                 >
                     {props.SubmitText}
                 </Button>

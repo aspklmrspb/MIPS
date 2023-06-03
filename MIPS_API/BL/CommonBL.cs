@@ -134,5 +134,31 @@ namespace MIPS_API.BL
             return data;
         }
 
+        internal static List<int> GetCMSYear(string connectionString)
+        {
+            List<int> CMSYears = new List<int>();
+            var dataTable = new DataTable();
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "select distinct Submission_Year from tbl_Lookup_Active_Submission_Year";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+
+                    SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                    adapter.Fill(dataTable);
+                }
+                CMSYears = dataTable.AsEnumerable().Select(Y => Y.Field<int>("Submission_Year")).ToList();
+            }
+            catch (Exception Ex)
+            {
+
+            }
+            return CMSYears;
+        }
     }
 }

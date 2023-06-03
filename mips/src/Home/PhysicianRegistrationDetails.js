@@ -48,7 +48,7 @@ export default function PhysicianRegistrationResult() {
                                 SelectedVal={selectCat}
                                 InputValuePairs={PhysicainSearchCatgeories}
                                 ShowButton='false'
-                                SubmitButtonCallBack={handleSubmitButtonChange}
+                                DropDownChangeCallback={handleSubmitButtonChange}
                             />
                             &nbsp;
                             {
@@ -58,7 +58,7 @@ export default function PhysicianRegistrationResult() {
                                         SelectedVal={searchText}
                                         InputValues={['All', 'True', 'False']}
                                         ShowButton='false'
-                                        SubmitButtonCallBack={(event) => setSearchText(event.target.value)}
+                                        DropDownChangeCallback={(event) => setSearchText(event.target.value)}
                                     />
                                     :
                                     <>
