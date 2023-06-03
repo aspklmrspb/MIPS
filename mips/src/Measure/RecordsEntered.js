@@ -4,12 +4,14 @@ import DropDownWithLabel from '../helpers/DropDownWithLabel';
 import { PhysicianSearchFilters } from './PhysicianSearchFilters';
 import './measurestyle.css' ;
 
-export default function CustomDataGridTable() {
+export default function CustomDataGridTable(props) {
     const [CMSYears, setCMSYears] = React.useState([2019, 2020, 2021, 2022]);
     const [selectedYear, setSelectedYear] = React.useState("");
     const [recordEnteredFilters, setRecordEnteredFilters] = React.useState({
         page: 0,
         noofRows: 25,
+        sortcolumn :'',
+        sortdirection:'',
         physiciannpi: '',
         tin: '',
         measure: '',
@@ -19,7 +21,8 @@ export default function CustomDataGridTable() {
         patientsex: '',
         cptcode: '',
         fromdate: '',
-        todate: ''
+        todate: '',
+        userName: props.UserName
     });
 
     const handleFromDateChange = (value) => {
@@ -84,6 +87,9 @@ export default function CustomDataGridTable() {
                         HandleToDateChange={handleToDateChange}
                         ResetBtnClick = {ResetPhysicianFilters}
                     />
+                </div>
+                <div style={{margin:'10px'}}>
+
                 </div>
             </Box>
         </div>

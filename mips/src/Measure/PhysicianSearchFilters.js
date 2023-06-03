@@ -3,8 +3,6 @@ import { BasicTextField } from '../helpers/InputFiledWithLabel';
 import DropDownWithLabel from '../helpers/DropDownWithLabel';
 import { DatePickerWithLabel } from '../helpers/DatePickerWithLabel';
 import Button from '@mui/material/Button';
-import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 
 export const PhysicianSearchFilters = (props) => {
     const PatientSexValues = [
@@ -132,14 +130,6 @@ export const PhysicianSearchFilters = (props) => {
                     </div>
                 </Grid>
                 <Grid item xs={12} sm={6} md={3}>
-                    <div style={{display:'flex'}}>
-                    <div style={{margin:'10px 5px',color:'rgb(0, 99, 204)',fontSize:'3rem'}}>
-                            <CloudDownloadIcon />
-                        </div>
-                        <div style={{margin:'10px 5px',color:'rgb(0, 99, 204)',fontSize:'3rem'}}>
-                            <PictureAsPdfIcon />
-                        </div>
-                    </div>
                 </Grid>
             </Grid>
         </div>

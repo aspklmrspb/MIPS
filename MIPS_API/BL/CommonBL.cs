@@ -133,7 +133,6 @@ namespace MIPS_API.BL
             }
             return data;
         }
-
         internal static List<int> GetCMSYear(string connectionString)
         {
             List<int> CMSYears = new List<int>();
@@ -159,6 +158,43 @@ namespace MIPS_API.BL
 
             }
             return CMSYears;
+        }
+        internal static string checkNPIValidity(string NPI)
+        {
+            string num = "";
+            if (NPI.Length == 10)
+            {
+                for (int i = 0; i < 10; i++)
+                {
+                    num = num + NPI[i];
+                }
+            }
+            return num;
+        }
+
+        internal static int getUserIdfromNPI(string NPI, string connectionString)
+        {
+            int UserId = 0;
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "select TOP 1 UserID from tbl_Users where NPI = @NPI";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@NPI", NPI);
+
+                    UserId = (int)command.ExecuteScalar();
+
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return UserId;
         }
     }
 }

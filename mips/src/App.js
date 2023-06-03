@@ -18,7 +18,7 @@ const App = () => {
       {isAuthenticated && <MenuBar />}
       <Routes>
         <Route path="/login" element={<LoginPage setIsAuthenticated={setIsAuthenticated} />} />
-        <Route path="/records-entered" element={<RecordsEntered />} />
+        <Route path="/records-entered" element={<RecordsEntered userName="administrator_100210" />} />
         <Route
           path="/tinaggregation"
           element={<TinAggregation />}
