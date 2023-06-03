@@ -7,20 +7,20 @@
 
     public class FacilityTinsResult
     {
-        public string TIN { get; set; }
-        public bool IS_GPRO { get; set; }
+        public string tin { get; set; }
+        public bool isgpro { get; set; }
         public string status { get; set; }
     }
 
     public class TinNPIResult
     {
-        public string Physician_NPI { get; set; }
+        public string physician_npi { get; set; }
         //public int userid { get; set; }
-        public string User_Name { get; set; }
-        public string First_Name { get; set; }
-        public string Last_Name { get; set; }
-        public string Records { get; set; }
-        public string Registered { get; set; }
+        public string user_name { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string records { get; set; }
+        public string registered { get; set; }
     }
 
     public class CmsDashboardRequest
@@ -46,7 +46,7 @@
 
     public class PhysicianRegDetailsGridRequest
     {
-        public int CategoryId { get; set; }
-        public string SearchText { get; set; }
+        public int categoryid { get; set; }
+        public string searchtext { get; set; }
     }
 }

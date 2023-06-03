@@ -22,7 +22,6 @@ const HomePage = ({ isAuthenticated, userName, userRole }) => {
     } else if (userRole === "AcrinAdmin") {
       const npigridresponse = await fetchNPIsandNPIsAttestedCount();
       setNPIAttestedData(npigridresponse);
-
     }
 
 

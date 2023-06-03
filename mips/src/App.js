@@ -13,7 +13,6 @@ import { useSelector } from 'react-redux';
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
-debugger;
   return (
     <Router>
       {isAuthenticated && <MenuBar />}

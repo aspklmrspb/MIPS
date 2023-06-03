@@ -1,9 +1,9 @@
 import axios from 'axios';
-
+import { BACKEND_API_URL} from '../appSettings';
 
 export const fetchUserTinData = async (userName) => {
   try {
-    const response = await axios.get(`https://localhost:7030/Home/GetFacilityTINs?UserName=${userName}`);
+    const response = await axios.get(`${BACKEND_API_URL}/Home/GetFacilityTINs?UserName=${userName}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching user tins:', error);
@@ -14,7 +14,7 @@ export const fetchUserTinData = async (userName) => {
 
 export const fetchUserTINNpiData = async (tin, userName) => {
   try {
-    const response = await axios.get(`https://localhost:7030/Home/PhysicianRecordCounts?TIN=${tin}&&UserName=${userName}`);
+    const response = await axios.get(`${BACKEND_API_URL}/Home/PhysicianRecordCounts?TIN=${tin}&&UserName=${userName}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching user tin npis:', error);
@@ -24,7 +24,7 @@ export const fetchUserTINNpiData = async (tin, userName) => {
 
 export const fetchCMSSubmissionDashboardData = async (year, userName, gpro, role) => {
   try {
-    const response = await axios.post(`https://localhost:7030/Home/CmsDashboardDetails`
+    const response = await axios.post(`${BACKEND_API_URL}/Home/CmsDashboardDetails`
       , {
         UserRole: role,
         UserName: userName,
@@ -40,7 +40,7 @@ export const fetchCMSSubmissionDashboardData = async (year, userName, gpro, role
 
 export const fetchNPIsandNPIsAttestedCount = async (userName) => {
   try {
-    const response = await axios.get(`https://localhost:7030/Home/GetPhysicianNPIsandAttestedCount`);
+    const response = await axios.get(`${BACKEND_API_URL}/Home/GetPhysicianNPIsandAttestedCount`);
     return response.data;
   } catch (error) {
     console.error('Error fetching user tins:', error);
@@ -51,9 +51,9 @@ export const fetchNPIsandNPIsAttestedCount = async (userName) => {
 
 export const fetchPhysicianRegistrationDetails = async(CatId, text) => {
   try {
-    const response = await axios.post(`https://localhost:7030/Home/GetPhysicianDetailswithRegistrationStatus`,{
-      "CategoryId" : parseInt(CatId),
-      "SearchText" : text
+    const response = await axios.post(`${BACKEND_API_URL}/Home/GetPhysicianDetailswithRegistrationStatus`,{
+      "categoryid" : parseInt(CatId),
+      "searchtext" : text
     });
     return response.data;
   } catch (error) {

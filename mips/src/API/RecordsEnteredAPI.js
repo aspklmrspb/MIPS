@@ -1,9 +1,10 @@
 import axios from 'axios';
+import { BACKEND_API_URL} from '../appSettings';
 
 export const fetchCMSSubmissionRecordEntered = async (year, userName, gpro, role) => {
     try {
         debugger;
-      const response = await axios.post(`https://localhost:7030/RecordEntered/CMSRecordsEnteredData`
+      const response = await axios.post(`${BACKEND_API_URL}/RecordEntered/CMSRecordsEnteredData`
         , {
           UserRole: role,
           UserName: userName,

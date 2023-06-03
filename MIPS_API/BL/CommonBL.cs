@@ -68,14 +68,14 @@ namespace MIPS_API.BL
 
                 data = dataTable.AsEnumerable().Select(Y => new CMSSubmitTinCount()
                 {
-                    SubmittedNonGproTins = Y.Field<int>("CMSSubmittedNonGproTins"),
-                    SubmittedGproTins = Y.Field<int>("CMSSubmittedGproTins"),
-                    TotalGproTins = Y.Field<int>("TotalGproTins"),
-                    TotalNonGproTins = Y.Field<int>("TotalNonGproTins"),
+                    submittednongprotins = Y.Field<int>("CMSSubmittedNonGproTins"),
+                    submittedgprotins = Y.Field<int>("CMSSubmittedGproTins"),
+                    totalgprotins = Y.Field<int>("TotalGproTins"),
+                    totalnongprotins = Y.Field<int>("TotalNonGproTins"),
                 }).FirstOrDefault();
 
-                data.GproTinCount = data.TotalGproTins - data.SubmittedGproTins;
-                data.NonGproTinCount = data.TotalNonGproTins - data.SubmittedNonGproTins;
+                data.gprotincount = data.totalgprotins - data.submittedgprotins;
+                data.nongprotincount = data.totalnongprotins - data.submittednongprotins;
             }
             catch (Exception ex)
             {
@@ -111,20 +111,20 @@ namespace MIPS_API.BL
                 if (isGpro)
                 {
                     data = dataTable.AsEnumerable().Select(Y => new GproTinStatus() {
-                        Tin = Y.Field<string>("TIN"),
-                        QM_Score = Y.Field<decimal?>("QM_Score") != null ? Math.Round(Y.Field<decimal>("QM_Score"), 2).ToString() : "0.00",
-                        QM_Submission_Status = Y.Field<string>("IsQMSubmitted"),
-                        IA_Score = Y.Field<decimal?>("IA_Score") != null ? Math.Round(Y.Field<decimal>("IA_Score"), 2).ToString() : "0.00",
-                        IA_Submission_Status = Y.Field<string>("IsIASubmitted")
+                        tin = Y.Field<string>("TIN"),
+                        qm_score = Y.Field<decimal?>("QM_Score") != null ? Math.Round(Y.Field<decimal>("QM_Score"), 2).ToString() : "0.00",
+                        qm_submission_status = Y.Field<string>("IsQMSubmitted"),
+                        ia_score = Y.Field<decimal?>("IA_Score") != null ? Math.Round(Y.Field<decimal>("IA_Score"), 2).ToString() : "0.00",
+                        ia_submission_status = Y.Field<string>("IsIASubmitted")
                     }).ToList();
                 }
                 else
                 {
                     data = dataTable.AsEnumerable().Select(Y => new GproTinStatus()
                     {
-                        Tin = Y.Field<string>("TIN"),
-                        QM_Submission_Status = Y.Field<string>("IsQMSubmitted").ToString() != "Yes" ? "No,Please review your current measure selections." : "Yes" ,
-                        IA_Submission_Status = Y.Field<string>("IsIASubmitted").ToString() != "Yes" ? "No,Please review your current measure selections." : "Yes"
+                        tin = Y.Field<string>("TIN"),
+                        qm_submission_status = Y.Field<string>("IsQMSubmitted").ToString() != "Yes" ? "No,Please review your current measure selections." : "Yes" ,
+                        ia_submission_status = Y.Field<string>("IsIASubmitted").ToString() != "Yes" ? "No,Please review your current measure selections." : "Yes"
                     }).ToList();
                 }
             }

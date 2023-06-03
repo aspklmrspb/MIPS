@@ -32,9 +32,12 @@ export default function PhysicianRegistrationResult() {
         setPhyRegDetails(response);
     }
 
+    useEffect(() =>{
+        GetPhyRegistrationDetails();
+    },[]);
     return (
         <div style={{ margin: '30px 10px', border: '1px solid #5D737D' }}>
-            <Accordion sx={{ background: '#4a5b63', color: '#fff', flexDirection: 'row-reverse' }}>
+            <Accordion sx={{ background: '#4a5b63', color: '#fff', flexDirection: 'row-reverse' }} expanded={true}>
                 <AccordionSummary expandIcon={<ExpandMoreIcon sx={{ color: '#fff', minHeigth: '20px' }} />} aria-controls="accordion-content" id="accordion-header">
                     <Typography variant="div"> Physician Registration Details</Typography>
                 </AccordionSummary>

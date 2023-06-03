@@ -28,13 +28,13 @@ const SubmissionDashboard = () => {
   const [DashboardData, setDashboardData] = useState({
     SelectedYear: 2019,
     IsGpro: "true",
-    dataList: [],
-    totalGproTins: 0,
-    totalNonGproTins: 0,
-    submittedGproTins: 0,
-    submittedNonGproTins: 0,
-    gproTinCount: 0,
-    nonGproTinCount: 0,
+    datalist: [],
+    totalgprotins: 0,
+    totalnongprotins: 0,
+    submittedgprotins: 0,
+    submittednongprotins: 0,
+    gprotincount: 0,
+    nongprotincount: 0,
     columnData: [],
   });
 
@@ -47,16 +47,16 @@ const SubmissionDashboard = () => {
     if (IsGpro === "true") {
       return [
         { field: 'tin', headerName: 'TIN' },
-        { field: 'qM_Submission_Status', headerName: 'QM CMS Status' },
-        { field: 'qM_Score', headerName: 'QM Score' },
-        { field: 'iA_Submission_Status', headerName: 'IA CMS Status' },
-        { field: 'iA_Score', headerName: 'IA Score' },
+        { field: 'qm_submission_status', headerName: 'QM CMS Status' },
+        { field: 'qm_score', headerName: 'QM Score' },
+        { field: 'ia_submission_status', headerName: 'IA CMS Status' },
+        { field: 'ia_score', headerName: 'IA Score' },
       ]
     } else {
       return [
         { field: 'tin', headerName: 'TIN' },
-        { field: 'qM_Submission_Status', headerName: 'Have all NPIs submitted Quality Measures?' },
-        { field: 'iA_Submission_Status', headerName: 'Have all NPIs submitted IA?' },
+        { field: 'qm_submission_status', headerName: 'Have all NPIs submitted Quality Measures?' },
+        { field: 'ia_submission_status', headerName: 'Have all NPIs submitted IA?' },
       ]
     }
   }
@@ -119,19 +119,19 @@ const SubmissionDashboard = () => {
                     <TableRowStyled >
                       <TableCellStyled sx={{}} >Submitted to CMS</TableCellStyled>
                       <TableCellStyled sx={{ textAlign: 'center' }} >
-                        {DashboardData.IsGpro === "true" ? DashboardData.submittedGproTins : DashboardData.submittedNonGproTins}
+                        {DashboardData.IsGpro === "true" ? DashboardData.submittedgprotins : DashboardData.submittednongprotins}
                       </TableCellStyled>
                     </TableRowStyled>
                     <TableRowStyled>
                       <TableCellStyled sx={{}} >Not Submitted to CMS</TableCellStyled>
                       <TableCellStyled sx={{ textAlign: 'center' }} >
-                        {DashboardData.IsGpro === "true" ? DashboardData.gproTinCount : DashboardData.nonGproTinCount}
+                        {DashboardData.IsGpro === "true" ? DashboardData.gprotincount : DashboardData.nongprotincount}
                       </TableCellStyled>
                     </TableRowStyled>
                     <TableRowStyled>
                       <TableCellStyled sx={{}} >Total</TableCellStyled>
                       <TableCellStyled sx={{ textAlign: 'center' }} >
-                        {DashboardData.IsGpro === "true" ? DashboardData.totalGproTins : DashboardData.totalNonGproTins}
+                        {DashboardData.IsGpro === "true" ? DashboardData.totalgprotins : DashboardData.totalnongprotins}
                       </TableCellStyled>
                     </TableRowStyled>
                   </TableBody>
@@ -140,7 +140,7 @@ const SubmissionDashboard = () => {
 
             </Grid>
             <Grid item xs={7} sx={{ border: '0px solid', padding: '0px' }}>
-              <CustomDataGridTable ColumnData={DashboardData.columnData} RowData={DashboardData.dataList} />
+              <CustomDataGridTable ColumnData={DashboardData.columnData} RowData={DashboardData.datalist} />
             </Grid>
           </Grid>
         </AccordionDetails>

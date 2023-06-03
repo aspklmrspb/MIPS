@@ -97,11 +97,9 @@ export default function FullFeaturedTable(props) {
             };
         },
         onTableChange: (action, tableState) => {
-            console.log(action, tableState);
     
             // a developer could react to change on an action basis or
             // examine the state as a whole and do whatever they want
-            debugger;    
           },
     };
 
@@ -208,6 +206,16 @@ export default function FullFeaturedTable(props) {
                         padding:'10px',
                         boxShadow:'none'
                     }
+                }
+            },
+            MuiTextField:{
+                styleOverrides:{
+                    root:{
+                        background:'#fff !important',
+                        '& > .MuiInput-input:after' :{
+                            borderBottom:'0px'
+                        }
+                    }    
                 }
             }
         },

@@ -45,8 +45,8 @@ namespace MIPS_API.Controllers
             {
                 return Ok(data.AsEnumerable().Select(Y => new FacilityTinsResult()
                 {
-                    TIN = Y.Field<string>("TIN"),
-                    IS_GPRO = Y.Field<bool>("IS_GPRO"),
+                    tin = Y.Field<string>("TIN"),
+                    isgpro = Y.Field<bool>("IS_GPRO"),
                     status = Y.Field<bool>("IS_GPRO") ? "( GPRO )" : ""
                 }).ToArray());
             }
@@ -65,13 +65,12 @@ namespace MIPS_API.Controllers
             {
                 return Ok(data.AsEnumerable().Select(Y => new TinNPIResult()
                 {
-                    Physician_NPI = Y.Field<string>("npi"),
-                    First_Name = Y.Field<string>("FirstName"),
-                    Last_Name = Y.Field<string>("LastName"),
-                    User_Name = Y.Field<string>("UserName"),
-                    Records = Y.Field<string>("Records"),
-                    Registered = Y.Field<string>("Registered"),
-                    //userid = Y.Field<int>("UserId")
+                    physician_npi = Y.Field<string>("npi"),
+                    first_name = Y.Field<string>("FirstName"),
+                    last_name = Y.Field<string>("LastName"),
+                    user_name = Y.Field<string>("UserName"),
+                    records = Y.Field<string>("Records"),
+                    registered = Y.Field<string>("Registered"),
                 }).ToArray());
             }
         }
@@ -81,7 +80,6 @@ namespace MIPS_API.Controllers
         public async Task<ActionResult> GetCmsSubmisisonDashBoardDetails(CmsDashboardRequest request)
         {
             int Role = 0;
-            string Npi = string.Empty;
             dynamic model = new ExpandoObject();
             try
             {
@@ -105,10 +103,10 @@ namespace MIPS_API.Controllers
 
 
                 var data = CommonBL.CMSSubmittedTinsCount(request.CMSYear, request.UserName, Role, connectionString);
-                data.IsSubmitToCMS = isyearstatus != null ? isyearstatus.isSubmittoCMS : false;
-                data.Role = Role;
-                data.IsGPRO = request.IsGpro != null ? (bool)request.IsGpro : true;
-                data.dataList = CommonBL.GproTinsCMSSubmittedDetails(request.CMSYear, data.IsGPRO, Role, request.UserName, connectionString);
+                data.issubmittocms = isyearstatus != null ? isyearstatus.isSubmittoCMS : false;
+                data.role = Role;
+                data.isgpro = request.IsGpro != null ? (bool)request.IsGpro : true;
+                data.datalist = CommonBL.GproTinsCMSSubmittedDetails(request.CMSYear, data.isgpro, Role, request.UserName, connectionString);
 
                 model.data = data;
                 model.SelectedYear = request.CMSYear;
@@ -144,7 +142,7 @@ namespace MIPS_API.Controllers
         [Route("GetPhysicianDetailswithRegistrationStatus")]
         public async Task<ActionResult> GetPhysicianDetailswithRegistrationStatus(PhysicianRegDetailsGridRequest request)
         {
-            DataTable data = await HomeBL.GetPhysicianDetailswithRegistrationStatus(request.CategoryId, request.SearchText, connectionString);
+            DataTable data = await HomeBL.GetPhysicianDetailswithRegistrationStatus(request.categoryid, request.searchtext, connectionString);
 
             if (data != null)
             {
