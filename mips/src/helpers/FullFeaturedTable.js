@@ -76,11 +76,12 @@ export default function FullFeaturedTable(props) {
         viewColumns: props.showViewColumnBtn,
         filter: props.showFilterBtn,
         filterType: "dropdown",
+        count : 100,
         responsive: props.responsive,
         tableBodyHeight: props.tableHeight,
         onRowClick: (action, state) => {
-            console.log(action);
-            console.dir(state);
+            debugger;
+
         },
         selectableRows: props.selectableRows,
         setRowProps: (row, dataIndex, rowIndex) => {
@@ -97,7 +98,7 @@ export default function FullFeaturedTable(props) {
             };
         },
         onTableChange: (action, tableState) => {
-    
+            debugger;
             // a developer could react to change on an action basis or
             // examine the state as a whole and do whatever they want
           },
@@ -133,6 +134,9 @@ export default function FullFeaturedTable(props) {
                         '&.MuiTableCell-footer': {
                             padding: '0',
                             minHeight: '50px !important'
+                        },
+                        '& div' :{
+                            lineHeight : '1.475rem',
                         },
                         textAlign: 'center',
                         border: '1px solid #ddd',

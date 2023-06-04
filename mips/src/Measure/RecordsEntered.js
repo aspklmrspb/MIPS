@@ -2,27 +2,33 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import DropDownWithLabel from '../helpers/DropDownWithLabel';
 import { PhysicianSearchFilters } from './PhysicianSearchFilters';
+import { fetchCMSSubmissionRecordEntered } from '../API/RecordsEnteredAPI';
+import FullFeaturedTable from '../helpers/FullFeaturedTable';
+import { RecordsEnteredTable } from '../helpers/PageTableHeaders';
+
 import './measurestyle.css' ;
 
 export default function CustomDataGridTable(props) {
-    const [CMSYears, setCMSYears] = React.useState([2019, 2020, 2021, 2022]);
-    const [selectedYear, setSelectedYear] = React.useState("");
+    const [CMSYears, setCMSYears] = React.useState([]);
+    const [selectedYear, setSelectedYear] = React.useState(0);
+    const [griddata,Setgriddata] = React.useState([]);
     const [recordEnteredFilters, setRecordEnteredFilters] = React.useState({
-        page: 0,
-        noofRows: 25,
-        sortcolumn :'',
-        sortdirection:'',
-        physiciannpi: '',
-        tin: '',
-        measure: '',
+        page: 1,
+        noofRows: 10,
+        sortcolumn : null,
+        sortdirection:null,
+        physiciannpi: '1962690453',
+        tin: '123456789',
+        measure: null,
         patientage: 0,
-        examuniqueid: '',
-        patientid: '',
+        examuniqueid: null,
+        patientid: null,
         patientsex: '',
-        cptcode: '',
-        fromdate: '',
-        todate: '',
-        userName: props.UserName
+        cptcode: null,
+        fromdate: null,
+        todate: null,
+        userName: props.UserName,
+        searchtext : null,
     });
 
     const handleFromDateChange = (value) => {
@@ -40,20 +46,31 @@ export default function CustomDataGridTable(props) {
         console.log(recordEnteredFilters);
     };
 
+    async function fetchdata(){
+        var response = await fetchCMSSubmissionRecordEntered(recordEnteredFilters,"FacilityUser","administrator_100210",selectedYear);
+        setCMSYears(response.cmsyears);
+        setSelectedYear(response.selectedyear);
+        Setgriddata(response.griddata);
+    }
+
+    React.useEffect(() =>{
+        fetchdata();
+    },[]);
+
     const ResetPhysicianFilters = ( ) =>{
         const updatedFilterVal = { ...recordEnteredFilters,
             page: 0,
             noofRows: 25,
-            physiciannpi: '',
-            tin: '',
-            measure: '',
+            physiciannpi: null,
+            tin: null,
+            measure: null,
             patientage: 0,
-            examuniqueid: '',
-            patientid: '',
-            patientsex: '',
-            cptcode: '',
-            fromdate: '',
-            todate: ''
+            examuniqueid: null,
+            patientid: null,
+            patientsex: null,
+            cptcode: null,
+            fromdate: null,
+            todate: null
         };
         debugger;
         setRecordEnteredFilters(updatedFilterVal);
@@ -86,10 +103,15 @@ export default function CustomDataGridTable(props) {
                         HandleFromDateChange={handleFromDateChange}
                         HandleToDateChange={handleToDateChange}
                         ResetBtnClick = {ResetPhysicianFilters}
+                        SubmitBtnClick = {fetchdata}
                     />
                 </div>
-                <div style={{margin:'10px'}}>
-
+                <div style={{margin:'10px 5px'}}>
+                    <FullFeaturedTable
+                        title= {RecordsEnteredTable.Title}
+                        ColumnData = {RecordsEnteredTable.ColumnData}
+                        RowData = {griddata}
+                     />
                 </div>
             </Box>
         </div>

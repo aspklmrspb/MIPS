@@ -3,6 +3,7 @@ using MIPS_API.Models;
 using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MIPS_API.BL
 {
@@ -159,6 +160,27 @@ namespace MIPS_API.BL
             }
             return CMSYears;
         }
+        internal static int GetActiveCMSYear(string connectionString)
+        {
+            int CMSYear = 0;
+            try
+            {
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    string query = "select top 1 Submission_Year from tbl_Lookup_Active_Submission_Year where IsActive = 1";
+                    SqlCommand command = new SqlCommand(query, connection);
+                    CMSYear = (int)command.ExecuteScalar();
+
+                }
+            }
+            catch (Exception Ex)
+            {
+
+            }
+            return CMSYear;
+        }
         internal static string checkNPIValidity(string NPI)
         {
             string num = "";
@@ -171,7 +193,6 @@ namespace MIPS_API.BL
             }
             return num;
         }
-
         internal static int getUserIdfromNPI(string NPI, string connectionString)
         {
             int UserId = 0;
