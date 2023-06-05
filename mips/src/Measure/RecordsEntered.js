@@ -46,35 +46,88 @@ export default function CustomDataGridTable(props) {
         console.log(recordEnteredFilters);
     };
 
+    const modifyGridData = async (page, rowcount, sortproperties, action) => {
+        if (action === "sort") {
+            debugger;
+            var sortColumn  = "";
+            switch(sortproperties.name){
+                case "Records  ID" :
+                    sortColumn = "ExamID";
+                    break;
+                case "TIN" :
+                    sortColumn = "TIN";
+                    break;
+                case "Measure Number":
+                    sortColumn = "MeasureNum";
+                    break;
+                case "Patient ID":
+                    sortColumn = "PatientID";
+                    break;
+                case "Patient Age":
+                    sortColumn = "PatientAge";
+                    break;
+                case "Patient Sex":
+                    sortColumn = "PatientGender";
+                    break;
+                case "Unique ExamID":
+                    sortColumn = "UniqueExamID";
+                    break;
+                case "Exam Date":
+                    sortColumn = "ExamDate";
+                    break;
+                case "CPT Code":
+                    sortColumn = "CPTCode";
+                    break;
+                case "Created Date":
+                    sortColumn = "Created_Date";
+                    break;
+            };
+            setRecordEnteredFilters(prevFilters => ({
+                ...prevFilters,
+                sortdirection : sortproperties.direction.toLocaleUpperCase(),
+                sortcolumn : sortColumn
+              }));
+              // Handle sorting action
+        } else {
+          setRecordEnteredFilters(prevFilters => ({
+            ...prevFilters,
+            page: page,
+            noofRows: rowcount
+          }));
+        }
+      }
+      
     async function fetchdata(){
         var response = await fetchCMSSubmissionRecordEntered(recordEnteredFilters,"FacilityUser","administrator_100210",selectedYear);
         setCMSYears(response.cmsyears);
         setSelectedYear(response.selectedyear);
         Setgriddata(response.griddata);
     }
+      
 
     React.useEffect(() =>{
         fetchdata();
-    },[]);
+    },[recordEnteredFilters.page, recordEnteredFilters.noofRows, recordEnteredFilters.sortcolumn,recordEnteredFilters.sortdirection]);
 
-    const ResetPhysicianFilters = ( ) =>{
+    const ResetPhysicianFilters = async ( ) =>{
         const updatedFilterVal = { ...recordEnteredFilters,
-            page: 0,
+            page: 1,
             noofRows: 25,
-            physiciannpi: null,
-            tin: null,
-            measure: null,
+            physiciannpi: '',
+            tin: '',
+            measure: '',
             patientage: 0,
-            examuniqueid: null,
-            patientid: null,
-            patientsex: null,
-            cptcode: null,
-            fromdate: null,
-            todate: null
+            examuniqueid: '',
+            patientid: '',
+            patientsex: '',
+            cptcode: '',
+            fromdate: '',
+            todate: ''
         };
-        debugger;
-        setRecordEnteredFilters(updatedFilterVal);
+       await setRecordEnteredFilters(updatedFilterVal);
+       fetchdata();
     }
+
     return (
         <div className='contentContr' style={{ marginTop: '1px' }}>
             <Box
@@ -93,7 +146,7 @@ export default function CustomDataGridTable(props) {
                     />
                 </div>
                 <div  style={{margin : '10px'}}>
-                    <h3 class="searchCls" >
+                    <h3 className="searchCls" >
                         Search physician details:
                     </h3>
 
@@ -111,6 +164,7 @@ export default function CustomDataGridTable(props) {
                         title= {RecordsEnteredTable.Title}
                         ColumnData = {RecordsEnteredTable.ColumnData}
                         RowData = {griddata}
+                        GetGridData = {modifyGridData}
                      />
                 </div>
             </Box>

@@ -98,9 +98,9 @@ export default function FullFeaturedTable(props) {
             };
         },
         onTableChange: (action, tableState) => {
-            debugger;
-            // a developer could react to change on an action basis or
-            // examine the state as a whole and do whatever they want
+            if(action === "sort" || action === "changeRowsPerPage" || action === "changePage"){
+                props.GetGridData(parseInt(tableState.page) + 1, tableState.rowsPerPage,tableState.sortOrder,action);
+            }
           },
     };
 
