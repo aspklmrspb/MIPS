@@ -1,5 +1,4 @@
 import * as React from 'react';
-import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
@@ -24,7 +23,7 @@ export default function DropDownWithLabel(props) {
     return (
         <>
             <div style={{ fontWeight: 'bold', margin: '8px 8px 0px' }} > {props.label} &nbsp; : </div>
-            <FormControl sx={{ m: 1, minWidth: 120 }} size="small">
+            <FormControl sx={{ m: 1, minWidth: 200 }} size="small">
                 <Select
                     value={props.SelectedVal}
                     onChange={props.DropDownChangeCallback}

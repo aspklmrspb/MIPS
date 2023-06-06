@@ -38,20 +38,6 @@ const MenuBar = () => {
           selected={isActiveTab('/records-entered')}
         />
         <Tab
-          label="Services"
-          component={Link}
-          to="/services"
-          value="/services"
-          selected={isActiveTab('/services')}
-        />
-        <Tab
-          label="Contact"
-          component={Link}
-          to="/contact"
-          value="/contact"
-          selected={isActiveTab('/contact')}
-        />
-        <Tab
           label="Performance Report"
           component={Link}
           to="/tinaggregation/index" // Update the value to match the nested route

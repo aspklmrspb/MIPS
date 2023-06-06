@@ -6,9 +6,9 @@ using System.Reflection.Emit;
 
 namespace MIPS_API.BL
 {
-    internal static class RecordsEnteredBL
+    public static class RecordsEnteredBL
     {
-        internal static async Task<DataTable> GetRecordsEnteredData(RecordsEnteredModel.ExamRecordsGridRequest request, string connectionString,bool isFacilityRole)
+        public static async Task<DataTable> GetRecordsEnteredData(ExamRecordsGridRequest request, string connectionString,bool isFacilityRole)
         {
             DataTable dataTable = new DataTable();
             int MeasureId = 0;

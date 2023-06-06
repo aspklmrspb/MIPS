@@ -3,6 +3,7 @@ import { BACKEND_API_URL } from '../appSettings';
 
 export const fetchCMSSubmissionRecordEntered = async (filterData, userrole, userName, cmsyear) => {
   try {
+    debugger;
     const response = await axios.post(`${BACKEND_API_URL}/RecordEntered/CMSRecordsEnteredData`
       , {
         userrole: userrole,
@@ -28,6 +29,16 @@ export const fetchCMSSubmissionRecordEntered = async (filterData, userrole, user
     return response.data;
   } catch (error) {
     console.error('Error fetching user tin npis:', error);
+    throw error;
+  }
+}
+
+export const fetchRecordsEnteredInitialData = async (UserName, UserRole, npi) => {
+  try{
+    const response = await axios.get(`${BACKEND_API_URL}/Performance/GetFacilityTINs?UserName=${UserName}&UserRole=${UserRole}&npi=${npi}`);
+    return response.data;
+  }catch(error){
+    console.error('Error Mpis:', error);
     throw error;
   }
 }

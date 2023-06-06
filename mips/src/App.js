@@ -23,8 +23,8 @@ const App = () => {
           path="/tinaggregation"
           element={<TinAggregation />}
         >
-          <Route index element={<Navigate to="index" replace />} />
-          <Route path="index" element={<TinAggregationIndex />} />
+          <Route index element={<Navigate to="index" replace  />} />
+          <Route path="index" element={<TinAggregationIndex  userRole="FacilityUser" userName="administrator_100210" npi="1962690453" />} />
         </Route>
 
         <Route
@@ -32,7 +32,7 @@ const App = () => {
           element={
             <PrivateRoute
               isAuthenticated={isAuthenticated}
-              element={<HomePage userRole="AcrinAdmin" userName="administrator_100210" />}
+              element={<HomePage userRole="FacilityUser" userName="administrator_100210" />}
             />
           }
         />

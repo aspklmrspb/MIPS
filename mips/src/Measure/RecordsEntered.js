@@ -5,6 +5,7 @@ import { PhysicianSearchFilters } from './PhysicianSearchFilters';
 import { fetchCMSSubmissionRecordEntered } from '../API/RecordsEnteredAPI';
 import FullFeaturedTable from '../helpers/FullFeaturedTable';
 import { RecordsEnteredTable } from '../helpers/PageTableHeaders';
+import dayjs from 'dayjs';
 
 import './measurestyle.css' ;
 
@@ -32,7 +33,7 @@ export default function CustomDataGridTable(props) {
     });
 
     const handleFromDateChange = (value) => {
-        setRecordEnteredFilters({ ...recordEnteredFilters, fromdate: value });
+        setRecordEnteredFilters({ ...recordEnteredFilters, fromdate: (value) });
     }
     const handleToDateChange = (value) => {
         setRecordEnteredFilters({ ...recordEnteredFilters, todate: value });
@@ -160,12 +161,15 @@ export default function CustomDataGridTable(props) {
                     />
                 </div>
                 <div style={{margin:'10px 5px'}}>
+                    {
+                        griddata.length === 0 &&
                     <FullFeaturedTable
                         title= {RecordsEnteredTable.Title}
                         ColumnData = {RecordsEnteredTable.ColumnData}
                         RowData = {griddata}
                         GetGridData = {modifyGridData}
                      />
+                    }
                 </div>
             </Box>
         </div>

@@ -7,9 +7,37 @@ using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace MIPS_API.BL
 {
-    internal static class CommonBL
+    public static class CommonBL
     {
-        internal static IsYearCondititon CheckCMSYearStatus(int CMSYear, string connectionString)
+        public static async Task<DataTable> GetFacilityTinsAsync(string UserName, string ConnectionString)
+        {
+            DataTable dataTable = new DataTable();
+            try
+            {
+                // Create and configure the SqlConnection
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Create the SqlCommand to execute the stored procedure
+                    using (SqlCommand command = new SqlCommand("sp_getFacilityTIN_GPRO", connection))
+                    {
+                        command.CommandType = CommandType.StoredProcedure;
+                        command.Parameters.AddWithValue("@FacilityUserName", UserName);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                        adapter.Fill(dataTable);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle any errors
+            }
+            return dataTable;
+        }
+        public static IsYearCondititon CheckCMSYearStatus(int CMSYear, string connectionString)
         {
 
             var isYearCondititon = new IsYearCondititon();
@@ -39,7 +67,7 @@ namespace MIPS_API.BL
             }
             return isYearCondititon;
         }
-        internal static CMSSubmitTinCount CMSSubmittedTinsCount(int? CMSYear, string UserName, int Role, string ConnectionString)
+        public static CMSSubmitTinCount CMSSubmittedTinsCount(int? CMSYear, string UserName, int Role, string ConnectionString)
         {
             var count = new List<int>();
             var data = new CMSSubmitTinCount();
@@ -83,7 +111,7 @@ namespace MIPS_API.BL
             }
             return data;
         }
-        internal static List<GproTinStatus> GproTinsCMSSubmittedDetails(int? CMSYear, bool isGpro, int Role, string UserName, string ConnectionString)
+        public static List<GproTinStatus> GproTinsCMSSubmittedDetails(int? CMSYear, bool isGpro, int Role, string UserName, string ConnectionString)
         {
             var count = new List<int>();
             var data = new List<GproTinStatus>();
@@ -134,7 +162,7 @@ namespace MIPS_API.BL
             }
             return data;
         }
-        internal static List<int> GetCMSYear(string connectionString)
+        public static List<int> GetCMSYear(string connectionString)
         {
             List<int> CMSYears = new List<int>();
             var dataTable = new DataTable();
@@ -160,7 +188,7 @@ namespace MIPS_API.BL
             }
             return CMSYears;
         }
-        internal static int GetActiveCMSYear(string connectionString)
+        public static int GetActiveCMSYear(string connectionString)
         {
             int CMSYear = 0;
             try
@@ -181,7 +209,7 @@ namespace MIPS_API.BL
             }
             return CMSYear;
         }
-        internal static string checkNPIValidity(string NPI)
+        public static string checkNPIValidity(string NPI)
         {
             string num = "";
             if (NPI.Length == 10)
@@ -193,7 +221,7 @@ namespace MIPS_API.BL
             }
             return num;
         }
-        internal static int getUserIdfromNPI(string NPI, string connectionString)
+        public static int getUserIdfromNPI(string NPI, string connectionString)
         {
             int UserId = 0;
             try
@@ -217,5 +245,57 @@ namespace MIPS_API.BL
 
             return UserId;
         }
+        public static async Task<DataTable> GetFacililtyTinsforAcrinAdmin(string npi, string ConnectionString)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                // Create and configure the SqlConnection
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    // Create the SqlCommand to execute the stored procedure
+                    using (SqlCommand command = new SqlCommand("SPGetNpisofTin_VW", connection))
+                    {
+                        command.Parameters.AddWithValue("@NPI", npi);
+
+                        SqlDataAdapter adapter = new SqlDataAdapter(command);
+
+                        adapter.Fill(dt);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+
+            return dt;
+        }
+        public static bool GetTinGproStatus(string TIN, string ConnectionString)
+        {
+            bool IsGpro = false;
+            try
+            {
+
+                using (SqlConnection connection = new SqlConnection(ConnectionString))
+                {
+                    connection.Open();
+
+                    string query = "select is_GPRO from tbl_TIN_GPRO where TIN = @TIN ";
+
+                    SqlCommand command = new SqlCommand(query, connection);
+                    command.Parameters.AddWithValue("@TIN", TIN);
+
+                    IsGpro = (bool)command.ExecuteScalar();
+
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            return IsGpro;
+        }
+
     }
 }

@@ -6,7 +6,6 @@ using MIPS_API.Models;
 using nrdr13.acr.org.SSOService;
 using System.Data;
 using System.Dynamic;
-using static MIPS_API.Models.RecordsEnteredModel;
 
 namespace MIPS_API.Controllers
 {

@@ -1,9 +1,8 @@
-import * as React from 'react';
-import dayjs from 'dayjs';
-import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-import { DatePicker } from '@mui/x-date-pickers/DatePicker';
-
+import React, { useState } from 'react';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
+import format from 'date-fns/format';
+import { DatePicker } from '@mui/x-date-pickers';
 export const DatePickerWithLabel = (props) => {
   return (
     <>
@@ -11,15 +10,17 @@ export const DatePickerWithLabel = (props) => {
         {props.label !== undefined ? `${props.label} : ` : ''}
       </div>
       &nbsp;
-      <LocalizationProvider dateAdapter={AdapterDayjs}>
-        <DatePicker
-          sx={{ width: '150px' }}
-          onChange= {props.HandleDateInputChange}
-          value={dayjs(props.Value)}
-          format="DD/MM/YYYY"
-          name={props.name}
-        />
-      </LocalizationProvider>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+            <DatePicker
+            sx={{ width: '200px' }}
+                      onChange= {props.HandleDateInputChange}
+                      value={props.Value}
+                      name={props.name}
+              renderInput={(params) => <input {...params} />}
+              renderValue={(value) => (value ? format(value, 'dd/MM/yyyy') : '')}
+            />
+          </LocalizationProvider>
     </>
   );
 };
+

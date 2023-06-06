@@ -35,7 +35,7 @@ namespace MIPS_API.Controllers
         public async Task<IActionResult> GetFacilityManagedTinsAsync(string UserName)
         {
             string _userName = UserName;
-            var data = await HomeBL.GetFacilityTinsAsync(UserName, connectionString);
+            var data = await CommonBL.GetFacilityTinsAsync(UserName, connectionString);
 
             if (data == null)
             {

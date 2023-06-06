@@ -1,17 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import InformationList from './InformationList';
 import SubmissionDashboard from './SubmissionDashboard';
-import AccoridanHelper from '../helpers/AccoridanHelper';
+import HomePageAccoridanHelper from './HomePageAccordianHelper';
 import Box from '@mui/material/Box';
 import { fetchUserTinData, fetchUserTINNpiData, fetchNPIsandNPIsAttestedCount } from '../API/HomeAPI';
 import FullFeaturedTable from '../helpers/FullFeaturedTable';
 import PhysicianRegistrationResult from './PhysicianRegistrationDetails';
 
-
 const HomePage = ({ isAuthenticated, userName, userRole }) => {
   const [tinData, setTinData] = useState([]);
   const [NPIAttestedData, setNPIAttestedData] = useState([]);
-  const [expandTab, setExpandTab] = useState(false);
 
   async function fetchData() {
     // You can await here
@@ -63,7 +61,7 @@ const HomePage = ({ isAuthenticated, userName, userRole }) => {
           userRole === "FacilityUser"
           &&
           tinData.map((row) => {
-            return <AccoridanHelper dataRow={row} key={`tin-${row.tin}-${row.IS_GPRO}`} expandFunction={expandCallbackFunction} />
+            return <HomePageAccoridanHelper dataRow={row} key={`tin-${row.tin}-${row.IS_GPRO}`} expandFunction={expandCallbackFunction} />
           })
         }
         {
