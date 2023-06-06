@@ -3,6 +3,7 @@ import Instructions from './Instructions';
 import DropDownWithLabel from '../helpers/DropDownWithLabel';
 import PerformancePageAccoridanHelper from './PerformancePageAccordianHelper';
 import { fetchRecordsEnteredInitialData } from '../API/PerformanceReportAPI';
+import { SaveExcelFile } from '../helpers/SaveExcelFile';
 
 export default function TinAggregationIndex(props) {
     const [initData, setInitData] = React.useState({
@@ -10,7 +11,25 @@ export default function TinAggregationIndex(props) {
         selectedyear : 0,
         cmsyearlist : []
     });
-
+    const excelData = [
+        {
+            sheetName : 'sheet 1',
+            columns : [
+                { header: 'Name', key: 'name', width: 15 },
+                { header: 'Email', key: 'email', width: 20 },
+                { header: 'Age', key: 'age', width: 10 },
+              ],
+              rowData :  [
+                { name: 'John', email: 'john@example.com', age: 30 },
+                { name: 'Jane', email: 'jane@example.com', age: 25 },
+                { name: 'Sam', email: 'sam@example.com', age: 35 },
+              ],
+              freezeColumns : 2,
+              headerBackgroundColor : 'FFFF00'
+        }
+    ];
+      
+      
     async function fetchData(){
         const response = await fetchRecordsEnteredInitialData(props.userName, props.userRole, props.npi, initData.selectedyear);
         setInitData({facilitytins : response.facilitytins, selectedyear : response.selectedyear, cmsyearlist : response.cmsyearlist});
@@ -25,6 +44,8 @@ export default function TinAggregationIndex(props) {
 
     return (
         <div style={{ padding: '10px' }}>
+                  <button onClick={() => SaveExcelFile(excelData,'testfile')}>Save Excel</button>
+
             <Instructions />
             <div style={{ margin: '30px 0px 15px', display: 'flex', alignItems: 'center' }}>
                 <DropDownWithLabel
