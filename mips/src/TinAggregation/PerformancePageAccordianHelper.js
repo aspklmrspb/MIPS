@@ -72,7 +72,6 @@ export default function PerformancePageAccoridanHelper(props) {
                   <TableBody>
                     {
                       performanceData.PTinData.map((row, index) => {
-                        debugger;
                         return <>
                           <TableRow>
                             <TableCell

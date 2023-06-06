@@ -7,21 +7,21 @@ import { fetchRecordsEnteredInitialData } from '../API/PerformanceReportAPI';
 export default function TinAggregationIndex(props) {
     const [initData, setInitData] = React.useState({
         facilitytins : [],
-        selectedyear : '',
+        selectedyear : 0,
         cmsyearlist : []
     });
 
     async function fetchData(){
-        const response = await fetchRecordsEnteredInitialData(props.userName, props.userRole, props.npi);
+        const response = await fetchRecordsEnteredInitialData(props.userName, props.userRole, props.npi, initData.selectedyear);
         setInitData({facilitytins : response.facilitytins, selectedyear : response.selectedyear, cmsyearlist : response.cmsyearlist});
     }
 
-    const showPerformanceData = async (tin) =>{
+    const CMSYearDataRefresh = (event) =>{
+        setInitData({...initData, selectedyear:event.target.value})
     }
-
     React.useEffect(() =>{
         fetchData();
-    },[])
+    },[initData.selectedyear])
 
     return (
         <div style={{ padding: '10px' }}>
@@ -32,6 +32,7 @@ export default function TinAggregationIndex(props) {
                     DropDownValues={initData.cmsyearlist}
                     showDefaultText={true}
                     SelectedVal={initData.selectedyear}
+                    DropDownChangeCallback = {CMSYearDataRefresh}
                 />
             </div>
             <div style={{margin:'0px 0px 5px'}}>
@@ -40,7 +41,6 @@ export default function TinAggregationIndex(props) {
                         return <PerformancePageAccoridanHelper 
                             dataRow={row} 
                             key={`tin-${row.tin}-${row.isgpro}`} 
-                            ExpandCallback={showPerformanceData}
                             npi={props.npi}
                             userName ={props.userName} 
                             userRole = {props.userRole}

@@ -27,11 +27,11 @@ namespace MIPS_API.Controllers
 
         [HttpGet]
         [Route("GetFacilityTINs")]
-        public async Task<ActionResult> GetPerformanceTins(string UserName, string UserRole, string npi)
+        public async Task<ActionResult> GetPerformanceTins(string UserName, string UserRole, string npi, int CMSYear)
         {
             DataTable data = new DataTable();
             dynamic model = new ExpandoObject();
-
+            CMSYear = CMSYear != 0 ? CMSYear : CommonBL.GetActiveCMSYear(connectionString);
             try
             {
                 if (UserRole.ToLower() == Constants.FacilityAdmin.ToLower()
@@ -76,7 +76,7 @@ namespace MIPS_API.Controllers
 
             }
            
-            model.selectedyear = CommonBL.GetActiveCMSYear(connectionString);
+            model.selectedyear = CMSYear;
             model.cmsyearlist = CommonBL.GetCMSYear(connectionString);
             
             return Ok(model);

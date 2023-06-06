@@ -18,9 +18,9 @@ export const fetchPerformanceReportData = async (tin,npi, userrole, userName, cm
   }
 }
 
-export const fetchRecordsEnteredInitialData = async (UserName, UserRole, npi) => {
+export const fetchRecordsEnteredInitialData = async (UserName, UserRole, npi, cmsyear) => {
   try{
-    const response = await axios.get(`${BACKEND_API_URL}/Performance/GetFacilityTINs?UserName=${UserName}&UserRole=${UserRole}&npi=${npi}`);
+    const response = await axios.get(`${BACKEND_API_URL}/Performance/GetFacilityTINs?UserName=${UserName}&UserRole=${UserRole}&npi=${npi}&CMSYear=${cmsyear}`);
     return response.data;
   }catch(error){
     console.error('Error Mpis:', error);
