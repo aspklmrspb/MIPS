@@ -46,4 +46,21 @@
         public DateTime? Createdon { get; set; }
     }
 
+    public class PerformanceReportModel
+    {
+        public string? TIN { get; set; }
+        public string? Measure_Details { get; set; }
+        public string? NPI_Text { get; set; }
+        public string? Initial_Patient_Population { get; set; }
+        public string? Performance_Denominator { get; set; }
+        public string? Performance_Numerator { get; set; }
+        public string? Performance_not_Met { get; set; }
+        public string? Performance_Rate { get; set; }
+        public string? Denominator_Exclusions { get; set; }
+        public string? Denominator_Exception { get; set; }
+        public string? Reporting_Denominator { get; set; }
+        public string? Reporting_Numerator { get; set; }
+        public string? Reporting_Rate { get; set; }
+        public string? Selected_For_CMS_Submission { get; set; }
+    }
 }

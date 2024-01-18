@@ -99,12 +99,20 @@ export default function CustomDataGridTable(props) {
       }
       
     async function fetchdata(){
+        debugger;
         var response = await fetchCMSSubmissionRecordEntered(recordEnteredFilters,"FacilityUser","administrator_100210",selectedYear);
         setCMSYears(response.cmsyears);
         setSelectedYear(response.selectedyear);
         Setgriddata(response.griddata);
     }
       
+    const changeYearCallback = async (event) => {
+        debugger;
+        var response = await fetchCMSSubmissionRecordEntered(recordEnteredFilters,"FacilityUser","administrator_100210",event.target.value);
+        setCMSYears(response.cmsyears);
+        setSelectedYear(response.selectedyear);
+        Setgriddata(response.griddata);
+    }
 
     React.useEffect(() =>{
         fetchdata();
@@ -143,7 +151,7 @@ export default function CustomDataGridTable(props) {
                         label="CMSYear"
                         SelectedVal={selectedYear}
                         showDefaultText="true"
-                        DropDownChangeCallback={(event) => { setSelectedYear(event.target.value) }}
+                        DropDownChangeCallback={changeYearCallback}
                     />
                 </div>
                 <div  style={{margin : '10px'}}>
@@ -162,13 +170,15 @@ export default function CustomDataGridTable(props) {
                 </div>
                 <div style={{margin:'10px 5px'}}>
                     {
-                        griddata.length === 0 &&
-                    <FullFeaturedTable
-                        title= {RecordsEnteredTable.Title}
-                        ColumnData = {RecordsEnteredTable.ColumnData}
-                        RowData = {griddata}
-                        GetGridData = {modifyGridData}
-                     />
+                        griddata.length !== 0 ?
+                        <FullFeaturedTable
+                            title= {RecordsEnteredTable.Title}
+                            ColumnData = {RecordsEnteredTable.ColumnData}
+                            RowData = {griddata}
+                            GetGridData = {modifyGridData}
+                        />
+                        :
+                        <Box>No Data Found</Box>
                     }
                 </div>
             </Box>

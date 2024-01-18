@@ -5,8 +5,11 @@
     background-color: #fff;
   }
   
-  .menu-bar .MuiTabs-root {
-  }
+  .menu-bar.side-menu .MuiTab-root {
+    align-items: flex-start;
+    color: #fff;
+    margin: 1px;
+}
   
   .menu-bar .MuiTab-root {
     font-weight: 600;
@@ -18,4 +21,6 @@
     right: 1px;
     font-weight: 600;
   }
-  
+  .menu-bar.side-menu .MuiTabs-flexContainer{
+    flex-direction: column;
+  }

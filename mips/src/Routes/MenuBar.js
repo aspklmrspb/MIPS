@@ -4,7 +4,7 @@ import { Tabs, Tab, Popover, List, ListItem, ListItemText, ListItemIcon } from '
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import './MenuBar.css'; // Import the CSS file
 
-const MenuBar = () => {
+export const MenuBar = () => {
   const location = useLocation();
   const [anchorEl, setAnchorEl] = useState(null);
 
@@ -17,7 +17,7 @@ const MenuBar = () => {
   };
 
   const isActiveTab = (pathname) => {
-    return location.pathname === pathname;
+    return location.pathname.indexOf(pathname) > -1;
   };
 
   return (
@@ -44,7 +44,14 @@ const MenuBar = () => {
           value="/tinaggregation/index" // Update the value to match the nested route
           selected={isActiveTab('/tinaggregation/index')} // Update the value to match the nested route
         />
-      </Tabs>
+        <Tab
+          label="More"
+          component={Link}
+          to="/more"
+          value="/more"
+          selected={isActiveTab('/more')}
+        />      
+        </Tabs>
       <div className="popover-container">
         <ListItem button onClick={handleClick}>
           <ListItemText primary="username: " />

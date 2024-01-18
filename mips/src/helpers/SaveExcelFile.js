@@ -34,6 +34,36 @@ export const SaveExcelFile = async (excelData, fileName) => {
                 },
             ];
         }
+
+        // Merge cells based on given range dynamically
+    if (item.mergeRange) {
+        const { startRow, startColumn, endRow, endColumn } = item.mergeRange;
+        if (
+          startRow &&
+          startColumn &&
+          endRow &&
+          endColumn &&
+          startRow <= endRow &&
+          startColumn <= endColumn
+        ) {
+            for (let row = startRow; row <= endRow; row++) {
+                for (let column = startColumn; column <= endColumn; column++) {
+                  const cell = worksheet.getCell(row, column);
+                  cell.alignment = { vertical: 'middle', horizontal: 'center' };
+                  cell.fill = {
+                    type: 'pattern',
+                    pattern: 'solid',
+                    fgColor: { argb: 'FFFF00' },
+                  };
+                }
+              }
+          worksheet.mergeCells(startRow, startColumn, endRow,endColumn );
+
+        
+        
+        }
+      }
+    
     });
 
     // Generate the Excel file

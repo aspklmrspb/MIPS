@@ -1,0 +1,15 @@
+a.active.more-menu-tab{
+    background: #00446a;
+}
+
+.more-menu-tab{
+    padding: 10px;
+    font-size: 1.1em;
+    display: block;
+    color: rgb(255, 255, 255);
+}
+.more-menu{
+    width: 20%;
+    height: 100vh;
+    background-color: #005788;
+}

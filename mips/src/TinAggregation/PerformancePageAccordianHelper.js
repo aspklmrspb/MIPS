@@ -32,6 +32,7 @@ export default function PerformancePageAccoridanHelper(props) {
   const handleChange = (tin) => async (event, newExpanded) => {
     setExpanded(newExpanded ? tin : false);
     if (newExpanded) {
+      debugger;
       var response = await fetchPerformanceReportData(tin,props.npi, props.userName, props.userRole, props.selectedyear);
       setPerformanceData({...performanceData , PTinData : response.PTinData, NPIData :  response.NPIData, CTinData : response.CTinData});
 

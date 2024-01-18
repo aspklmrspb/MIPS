@@ -101,6 +101,28 @@ namespace MIPS_API.Controllers
             }
             return Ok(model);
         }
+        [HttpGet]
+        [Route("DownloadPerformanceReportData")]
+        public async Task<ActionResult> DownloadPerformanceReportData(bool GPRO, int CMSYear)
+        {
+            dynamic model = new ExpandoObject();
+            try
+            {
+                var Tindata = await PerformanceReportBL.getFacilityPerformanceData(String.Empty, CMSYear, connectionString,false, GPRO);
+                var NpiData = await PerformanceReportBL.getPhysicianPerformanceData(String.Empty, String.Empty, CMSYear, connectionString,false, GPRO);
 
+                var data = SetDownloadPerformanceReportData(Tindata, NpiData);
+            }
+            catch (Exception Ex)
+            {
+
+            }
+            return Ok(model);
+        }
+
+        private object SetDownloadPerformanceReportData(List<TinMeasureDataResponse> tindata, List<TinMeasureDataResponse> npiData)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

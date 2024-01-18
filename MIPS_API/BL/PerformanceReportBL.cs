@@ -6,7 +6,7 @@ namespace MIPS_API.BL
 {
     public class PerformanceReportBL
     {
-        public static async Task<List<TinMeasureDataResponse>> getFacilityPerformanceData(string TIN,int CMSYear,string ConnectionString, bool Is90days = false)
+        public static async Task<List<TinMeasureDataResponse>> getFacilityPerformanceData(string? TIN,int CMSYear,string ConnectionString, bool Is90days = false, bool? GPRO = null)
         {
             DataTable dt =  new DataTable();
             List<TinMeasureDataResponse> resultData = new List<TinMeasureDataResponse>();
@@ -24,6 +24,8 @@ namespace MIPS_API.BL
                         command.Parameters.AddWithValue("@TIN", TIN);
                         command.Parameters.AddWithValue("@CMSYear", CMSYear);
                         command.Parameters.AddWithValue("@Is90days", Is90days);
+                        command.Parameters.AddWithValue("@GPRO", GPRO);
+
 
                         SqlDataAdapter adapter = new SqlDataAdapter(command);
 
@@ -70,7 +72,7 @@ namespace MIPS_API.BL
             return resultData;
         }
 
-        public static async Task<List<TinMeasureDataResponse>> getPhysicianPerformanceData(string TIN,string NPI, int CMSYear, string ConnectionString, bool Is90days = false)
+        public static async Task<List<TinMeasureDataResponse>> getPhysicianPerformanceData(string TIN,string NPI, int CMSYear, string ConnectionString, bool Is90days = false, bool? GPRO = null)
         {
             DataTable dt = new DataTable();
             List<TinMeasureDataResponse> resultData = new List<TinMeasureDataResponse>();
@@ -86,9 +88,10 @@ namespace MIPS_API.BL
                     {
                         command.CommandType = CommandType.StoredProcedure;
                         command.Parameters.AddWithValue("@TIN", TIN);
-                        command.Parameters.AddWithValue("@NPI", string.IsNullOrEmpty(NPI) ? "" : NPI);
+                        command.Parameters.AddWithValue("@NPI", "");
                         command.Parameters.AddWithValue("@CMSYear", CMSYear);
                         command.Parameters.AddWithValue("@Is90days", Is90days);
+                        command.Parameters.AddWithValue("@GPRO", GPRO);
 
                         SqlDataAdapter adapter = new SqlDataAdapter(command);
 
